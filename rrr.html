@@ -1,0 +1,3083 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rose-fashion-accessories — Premium Lifestyle Store</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            obsidian:  '#0A0A0A',
+            charcoal:  '#111111',
+            graphite:  '#1A1A1A',
+            gold:      '#D4AF37',
+            amber:     '#C8922A',
+            champagne: '#F5E6C8',
+            silk:      '#E8D5B0',
+          },
+          fontFamily: {
+            headline: ['Bebas Neue', 'sans-serif'],
+            display:  ['Cormorant Garamond', 'serif'],
+            body:     ['DM Sans', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+
+    @keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 18s linear infinite;
+}
+    * { scroll-behavior: smooth; box-sizing: border-box; }
+
+    body {
+      background-color: #0A0A0A;
+      font-family: 'DM Sans', sans-serif;
+      color: #F5E6C8;
+      overflow-x: hidden;
+    }
+
+    /* ---- LOADER ---- */
+    #loader {
+      transition: opacity 0.9s ease, transform 0.9s ease;
+    }
+
+    /* ---- NAVBAR ---- */
+    #navbar {
+      transition: all 0.4s ease;
+    }
+    #navbar.scrolled {
+      background-color: rgba(10, 10, 10, 0.97);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    /* ---- MOBILE MENU ---- */
+    #mobile-menu {
+      transition: max-height 0.4s ease, opacity 0.3s ease;
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+    }
+    #mobile-menu.open {
+      max-height: 500px;
+      opacity: 1;
+    }
+
+    /* ---- ANIMATIONS ---- */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+    @keyframes slideRight {
+      from { opacity: 0; transform: translateX(-30px); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes shimmer {
+      0%   { background-position: -200% center; }
+      100% { background-position: 200% center; }
+    }
+
+    .gold-shimmer {
+      background: linear-gradient(90deg, #D4AF37, #F5E6C8, #D4AF37, #C8922A, #D4AF37);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: shimmer 4s linear infinite;
+    }
+
+    /* ---- GOLD LINE DIVIDER ---- */
+    .gold-line {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(to right, transparent, #D4AF37, transparent);
+    }
+
+    /* ---- SCROLLBAR ---- */
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: #0A0A0A; }
+    ::-webkit-scrollbar-thumb { background: #D4AF37; border-radius: 2px; }
+  </style>
+</head>
+
+<body>
+
+<!-- ========== PAGE LOADER ========== -->
+<div id="loader" class="fixed inset-0 z-[9999] bg-obsidian flex flex-col items-center justify-center gap-8">
+
+  <!-- Animated box logo -->
+  <div class="relative" style="animation: fadeUp 0.6s ease forwards;">
+    <div class="w-20 h-20 border-2 border-gold/30 flex items-center justify-center relative">
+      <!-- Corner accents -->
+      <div class="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-gold"></div>
+      <div class="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-gold"></div>
+      <div class="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-gold"></div>
+      <div class="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-gold"></div>
+      <span class="font-headline text-gold text-3xl tracking-widest">B</span>
+    </div>
+  </div>
+
+  <!-- Brand name -->
+  <div class="flex flex-col items-center gap-1" style="animation: fadeUp 0.8s ease forwards;">
+    <span class="font-headline text-4xl tracking-[0.3em] gold-shimmer">ROSE-STORE</span>
+    <span class="font-body text-xs tracking-[0.5em] uppercase text-champagne/30">Premium Lifestyle Store</span>
+  </div>
+
+  <!-- Spinning ring loader -->
+  <div class="relative w-14 h-14">
+    <div class="absolute inset-0 rounded-full border border-gold/10"></div>
+    <div class="absolute inset-0 rounded-full border-t-2 border-gold animate-spin"></div>
+    <div class="absolute inset-2 rounded-full border border-gold/10"></div>
+    <div class="absolute inset-2 rounded-full border-b border-amber/50 animate-spin" style="animation-duration:1.8s;"></div>
+    <div class="absolute inset-0 flex items-center justify-center">
+      <div class="w-1.5 h-1.5 rounded-full bg-gold animate-pulse"></div>
+    </div>
+  </div>
+
+  <!-- Loading text -->
+  <p class="font-body text-xs tracking-[0.4em] uppercase text-champagne/20" id="loader-text">Loading...</p>
+
+  <!-- Progress bar -->
+  <div class="w-48 h-px bg-white/5 overflow-hidden">
+    <div id="loader-bar" class="h-full bg-gradient-to-r from-amber via-gold to-champagne"
+      style="width:0%; transition: width 0.3s ease;"></div>
+  </div>
+
+</div>
+
+
+<!-- ========== NAVBAR ========== -->
+<nav id="navbar" class="fixed top-0 left-0 w-full z-50 px-6 md:px-16 py-5 flex items-center justify-between bg-transparent">
+
+  <!-- Logo -->
+  <a href="#" class="flex flex-col leading-none group">
+    <span class="font-headline text-2xl tracking-[0.25em] text-gold group-hover:gold-shimmer transition-all duration-300">Rose</span>
+    <span class="font-body text-[9px] tracking-[0.5em] uppercase text-champagne/40 mt-0.5">STORE</span>
+  </a>
+
+  <!-- Desktop Nav -->
+  <ul class="hidden md:flex items-center gap-10 font-body text-xs tracking-[0.2em] uppercase text-champagne/60">
+    <li><a href="#categories" class="hover:text-gold transition-colors duration-300">Shop</a></li>
+    <li><a href="#products" class="hover:text-gold transition-colors duration-300">Products</a></li>
+    <li><a href="#order" class="hover:text-gold transition-colors duration-300">Order</a></li>
+    <li><a href="#about" class="hover:text-gold transition-colors duration-300">About</a></li>
+    <li><a href="#lookbook" class="hover:text-gold transition-colors duration-300">Lookbook</a></li>
+    <li><a href="#contact" class="hover:text-gold transition-colors duration-300">Contact</a></li>
+  </ul>
+
+  <!-- Right: Icons + CTA -->
+  <div class="hidden md:flex items-center gap-5">
+    <!-- Search icon -->
+    <button class="text-champagne/40 hover:text-gold transition-colors duration-300">
+      <i class="fas fa-search text-sm"></i>
+    </button>
+
+    <!-- Order Now CTA -->
+    <a href="#order"
+      class="font-body text-[10px] tracking-[0.2em] uppercase px-6 py-2.5 border border-gold text-gold hover:bg-gold hover:text-obsidian transition-all duration-300">
+      Order Now
+    </a>
+  </div>
+
+  <!-- Hamburger Mobile -->
+  <button id="menu-btn" class="md:hidden text-gold text-xl focus:outline-none">
+    <i class="fas fa-bars" id="menu-icon"></i>
+  </button>
+
+</nav>
+
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="fixed top-[72px] left-0 w-full bg-obsidian/98 z-40 px-8 py-6 flex flex-col gap-5 font-body text-xs tracking-[0.3em] uppercase text-champagne/60 border-b border-gold/10">
+  <a href="#categories" class="hover:text-gold transition-colors" onclick="closeMenu()">Shop</a>
+  <a href="#products"   class="hover:text-gold transition-colors" onclick="closeMenu()">Products</a>
+  <a href="#order"      class="hover:text-gold transition-colors" onclick="closeMenu()">Order</a>
+  <a href="#about"      class="hover:text-gold transition-colors" onclick="closeMenu()">About</a>
+  <a href="#lookbook"   class="hover:text-gold transition-colors" onclick="closeMenu()">Lookbook</a>
+  <a href="#contact"    class="hover:text-gold transition-colors" onclick="closeMenu()">Contact</a>
+  <a href="#order" onclick="closeMenu()"
+    class="mt-2 text-center border border-gold text-gold py-3 hover:bg-gold hover:text-obsidian transition-all duration-300">
+    Order Now
+  </a>
+</div>
+
+
+<!-- ========== MAIN CONTENT ========== -->
+<main>
+  <!-- All sections go here step by step -->
+
+<!-- ========== HERO SECTION ========== -->
+<section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden bg-obsidian">
+
+  <!-- Background layers -->
+  <div class="absolute inset-0 z-0">
+    <!-- Dark gradient base -->
+    <div class="absolute inset-0 bg-gradient-to-br from-obsidian via-graphite to-obsidian"></div>
+
+    <!-- Gold radial glows -->
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_#D4AF3718_0%,_transparent_55%)]"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_#C8922A12_0%,_transparent_55%)]"></div>
+
+    <!-- Grain texture -->
+    <div class="absolute inset-0 opacity-[0.035]"
+      style="background-image:url('https://www.transparenttextures.com/patterns/noise.png');"></div>
+  </div>
+
+  <!-- Decorative large B letter background -->
+  <div class="absolute left-[-60px] top-1/2 -translate-y-1/2 font-headline text-[300px] md:text-[500px] text-white/[0.015] select-none pointer-events-none leading-none z-0">
+    B
+  </div>
+
+  <!-- Decorative grid lines -->
+  <div class="absolute inset-0 z-0 opacity-[0.03]"
+    style="background-image: linear-gradient(#D4AF37 1px, transparent 1px), linear-gradient(90deg, #D4AF37 1px, transparent 1px);
+           background-size: 80px 80px;">
+  </div>
+
+  <!-- Floating decorative dots -->
+  <div class="absolute top-32 left-16 w-1.5 h-1.5 rounded-full bg-gold/40 animate-pulse"></div>
+  <div class="absolute top-48 right-1/4 w-1 h-1 rounded-full bg-amber/50 animate-pulse delay-500"></div>
+  <div class="absolute bottom-40 left-1/3 w-1 h-1 rounded-full bg-gold/30 animate-pulse delay-1000"></div>
+  <div class="absolute bottom-32 right-16 w-1.5 h-1.5 rounded-full bg-champagne/20 animate-pulse"></div>
+
+  <!-- Hero Content -->
+  <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-16 grid md:grid-cols-2 gap-12 items-center py-32 md:min-h-screen">
+
+    <!-- Left: Text Content -->
+    <div class="flex flex-col gap-7" style="animation: fadeUp 1s ease forwards;">
+
+      <!-- Top tag -->
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-px bg-gold"></div>
+        <span class="font-body text-[10px] tracking-[0.5em] uppercase text-gold/80">Lagos, Nigeria</span>
+        <div class="w-2 h-2 rounded-full bg-gold animate-pulse"></div>
+      </div>
+
+      <!-- Main Headline -->
+      <div class="flex flex-col gap-1">
+        <h1 class="font-headline text-7xl md:text-9xl leading-none tracking-wider text-champagne">
+          WEAR
+        </h1>
+        <h1 class="font-headline text-7xl md:text-9xl leading-none tracking-wider gold-shimmer">
+          AFRICA
+        </h1>
+        <h1 class="font-headline text-7xl md:text-9xl leading-none tracking-wider text-champagne/20">
+          BOLD
+        </h1>
+      </div>
+
+      <!-- Sub heading -->
+      <p class="font-display text-lg md:text-xl italic text-silk/70 max-w-md leading-relaxed">
+        Premium Jewelry, Bags, Watches & Shades — 
+        crafted for those who move with style and intention.
+      </p>
+
+      <!-- Gender toggle pills -->
+      <div class="flex gap-3">
+        <button onclick="setGender('women')" id="pill-women"
+          class="gender-pill font-body text-xs tracking-[0.2em] uppercase px-6 py-2.5 bg-gold text-obsidian transition-all duration-300">
+          Women
+        </button>
+        <button onclick="setGender('men')" id="pill-men"
+          class="gender-pill font-body text-xs tracking-[0.2em] uppercase px-6 py-2.5 border border-champagne/20 text-champagne/50 hover:border-gold hover:text-gold transition-all duration-300">
+          Men
+        </button>
+      </div>
+
+      <!-- CTA Buttons -->
+      <div class="flex flex-wrap gap-4">
+        <a href="#categories"
+          class="font-body text-xs tracking-[0.2em] uppercase px-8 py-4 bg-gold text-obsidian font-medium hover:bg-amber transition-all duration-300 shadow-lg shadow-gold/20">
+          Shop Collection
+        </a>
+        <a href="#order"
+          class="font-body text-xs tracking-[0.2em] uppercase px-8 py-4 border border-champagne/20 text-champagne/60 hover:border-gold hover:text-gold transition-all duration-300">
+          Place an Order
+        </a>
+      </div>
+
+      <!-- Stats row -->
+      <div class="flex gap-10 pt-6 border-t border-white/5 mt-2">
+        <div>
+          <p class="font-headline text-4xl text-gold tracking-wider">1K+</p>
+          <p class="font-body text-[10px] tracking-[0.3em] uppercase text-champagne/30 mt-1">Happy Clients</p>
+        </div>
+        <div class="w-px bg-white/5"></div>
+        <div>
+          <p class="font-headline text-4xl text-gold tracking-wider">4</p>
+          <p class="font-body text-[10px] tracking-[0.3em] uppercase text-champagne/30 mt-1">Categories</p>
+        </div>
+        <div class="w-px bg-white/5"></div>
+        <div>
+          <p class="font-headline text-4xl text-gold tracking-wider">5★</p>
+          <p class="font-body text-[10px] tracking-[0.3em] uppercase text-champagne/30 mt-1">Rated</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Right: Image Collage -->
+    <div class="relative hidden md:flex items-center justify-center" style="animation: fadeIn 1.4s ease forwards;">
+
+      <!-- Main large image -->
+      <div class="relative w-80 h-[500px] overflow-hidden border border-gold/20">
+        <img id="hero-img-main"
+          src="https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?w=600&q=80"
+          alt="Luxury Jewelry"
+          class="w-full h-full object-cover hover:scale-105 transition-transform duration-700 opacity-90"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-obsidian/70 via-transparent to-transparent"></div>
+
+        <!-- Corner accents -->
+        <div class="absolute top-3 left-3 w-6 h-6 border-t-2 border-l-2 border-gold/60"></div>
+        <div class="absolute top-3 right-3 w-6 h-6 border-t-2 border-r-2 border-gold/60"></div>
+        <div class="absolute bottom-3 left-3 w-6 h-6 border-b-2 border-l-2 border-gold/60"></div>
+        <div class="absolute bottom-3 right-3 w-6 h-6 border-b-2 border-r-2 border-gold/60"></div>
+
+        <!-- Label inside image -->
+        <div class="absolute bottom-6 left-6">
+          <p class="font-body text-[10px] tracking-[0.4em] uppercase text-gold/70">New Arrivals</p>
+          <p class="font-headline text-2xl text-champagne tracking-wider mt-1">2025 Collection</p>
+        </div>
+      </div>
+
+      <!-- Small top right image -->
+      <div class="absolute -right-6 top-8 w-36 h-44 overflow-hidden border border-gold/20">
+        <img id="hero-img-top"
+          src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=300&q=80"
+          alt="Luxury Bag"
+          class="w-full h-full object-cover hover:scale-110 transition-transform duration-700"/>
+        <div class="absolute inset-0 bg-obsidian/30"></div>
+      </div>
+
+      <!-- Small bottom right image -->
+      <div class="absolute -right-6 bottom-8 w-36 h-44 overflow-hidden border border-gold/20">
+        <img id="hero-img-bottom"
+          src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49?w=300&q=80"
+          alt="Luxury Watch"
+          class="w-full h-full object-cover hover:scale-110 transition-transform duration-700"/>
+        <div class="absolute inset-0 bg-obsidian/30"></div>
+      </div>
+
+      <!-- Floating product badge -->
+      <div class="absolute -left-8 bottom-20 bg-graphite border border-gold/20 px-5 py-4 shadow-2xl z-20">
+        <p class="font-body text-[10px] tracking-[0.3em] uppercase text-gold/60">Trending Now</p>
+        <p class="font-display text-lg text-champagne mt-1 italic">Gold Series ✦</p>
+      </div>
+
+      <!-- Vertical text -->
+      <div class="absolute -right-16 top-1/2 -translate-y-1/2 -rotate-90 font-body text-[9px] tracking-[0.6em] uppercase text-champagne/15 whitespace-nowrap">
+        Rose-fashion-accessories — Premium Lifestyle
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2">
+    <span class="font-body text-[9px] tracking-[0.5em] uppercase text-champagne/20">Scroll</span>
+    <div class="w-px h-10 bg-gradient-to-b from-gold/40 to-transparent animate-pulse"></div>
+  </div>
+
+  <!-- Bottom gold line -->
+  <div class="absolute bottom-0 left-0 gold-line z-10"></div>
+
+</section>
+
+<!-- ========== CATEGORIES SECTION ========== -->
+<section id="categories" class="relative py-24 md:py-36 bg-obsidian overflow-hidden">
+
+  <!-- Decorative top line -->
+  <div class="absolute top-0 left-0 gold-line"></div>
+
+  <!-- Background glow -->
+  <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_#D4AF3708_0%,_transparent_70%)]"></div>
+
+  <!-- Big decorative background text -->
+  <div class="absolute top-10 left-1/2 -translate-x-1/2 font-headline text-[120px] md:text-[220px] text-white/[0.02] whitespace-nowrap select-none pointer-events-none leading-none tracking-widest">
+    SHOP
+  </div>
+
+  <div class="max-w-7xl mx-auto px-6 md:px-16">
+
+    <!-- Section Header -->
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
+      <div class="flex flex-col gap-4">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-px bg-gold"></div>
+          <span class="font-body text-[10px] tracking-[0.5em] uppercase text-gold/70">Browse By Category</span>
+        </div>
+        <h2 class="font-headline text-6xl md:text-8xl text-champagne tracking-wider leading-none">
+          SHOP THE <br/>
+          <span class="gold-shimmer">COLLECTION</span>
+        </h2>
+      </div>
+      <p class="font-display text-base italic text-silk/50 max-w-xs leading-relaxed">
+        Four curated worlds of luxury — each one crafted to elevate your everyday.
+      </p>
+    </div>
+
+    <!-- Categories Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+
+      <!-- Category 1: Jewelry -->
+      <div class="group relative overflow-hidden cursor-pointer h-[520px] border border-gold/10 hover:border-gold/40 transition-all duration-500"
+        onclick="scrollToProducts('jewelry')">
+
+        <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=500&q=80"
+          alt="Jewelry"
+          class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-70 group-hover:opacity-90"/>
+
+        <!-- Gradient overlay -->
+        <div class="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/40 to-transparent"></div>
+
+        <!-- Corner accents -->
+        <div class="absolute top-4 left-4 w-5 h-5 border-t border-l border-gold/0 group-hover:border-gold/60 transition-all duration-500"></div>
+        <div class="absolute top-4 right-4 w-5 h-5 border-t border-r border-gold/0 group-hover:border-gold/60 transition-all duration-500"></div>
+        <div class="absolute bottom-4 left-4 w-5 h-5 border-b border-l border-gold/0 group-hover:border-gold/60 transition-all duration-500"></div>
+        <div class="absolute bottom-4 right-4 w-5 h-5 border-b border-r border-gold/0 group-hover:border-gold/60 transition-all duration-500"></div>
+
+        <!-- Content -->
+        <div class="absolute bottom-0 left-0 right-0 p-7 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+          <div class="flex items-center gap-2 mb-3">
+            <i class="fas fa-gem text-gold text-xs"></i>
+            <span class="font-body text-[9px] tracking-[0.5em] uppercase text-gold/70">Collection</span>
+          </div>
+          <h3 class="font-headline text-5xl text-champagne tracking-wider">JEWELRY</h3>
+          <p class="font-body text-xs text-silk/50 mt-2 leading-relaxed max-h-0 group-hover:max-h-20 overflow-hidden transition-all duration-500">
+            Necklaces, bracelets, earrings & rings. Gold & silver plated premium pieces.
+          </p>
+          <div class="flex items-center gap-2 mt-4 opacity-0 group-hover:opacity-100 transition-all duration-500">
+            <span class="font-body text-[10px] tracking-[0.3em] uppercase text-gold">Shop Now</span>
+            <i class="fas fa-arrow-right text-gold text-[10px]"></i>
+          </div>
+        </div>
+
+        <!-- Item count badge -->
+        <div class="absolute top-5 right-5 bg-gold/10 border border-gold/20 px-3 py-1 opacity-0 group-hover:opacity-100 transition-all duration-500">
+          <span class="font-body text-[9px] tracking-widest uppercase text-gold">20+ Items</span>
+        </div>
+      </div>
+
+      <!-- Category 2: Bags -->
+      <div class="group relative overflow-hidden cursor-pointer h-[520px] border border-gold/10 hover:border-gold/40 transition-all duration-500 md:mt-10"
+        onclick="scrollToProducts('bags')">
+
+        <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=500&q=80"
+          alt="Bags"
+          class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-70 group-hover:opacity-90"/>
+
+        <div class="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/40 to-transparent"></div>
+
+        <div class="absolute top-4 left-4 w-5 h-5 border-t border-l border-gold/0 group-hover:border-gold/60 transition-all duration-500"></div>
+        <div class="absolute top-4 right-4 w-5 h-5 border-t border-r border-gold/0 group-hover:border-gold/60 transition-all duration-500"></div>
+        <div class="absolute bottom-4 left-4 w-5 h-5 border-b border-l border-gold/0 group-hover:border-gold/60 transition-all duration-500"></div>
+        <div class="absolute bottom-4 right-4 w-5 h-5 border-b border-r border-gold/0 group-hover:border-gold/60 transition-all duration-500"></div>
+
+        <div class="absolute bottom-0 left-0 right-0 p-7 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+          <div class="flex items-center gap-2 mb-3">
+            <i class="fas fa-shopping-bag text-gold text-xs"></i>
+            <span class="font-body text-[9px] tracking-[0.5em] uppercase text-gold/70">Collection</span>
+          </div>
+          <h3 class="font-headline text-5xl text-champagne tracking-wider">BAGS</h3>
+          <p class="font-body text-xs text-silk/50 mt-2 leading-relaxed max-h-0 group-hover:max-h-20 overflow-hidden transition-all duration-500">
+            Handbags, tote bags, backpacks & clutches for men and women.
+          </p>
+          <div class="flex items-center gap-2 mt-4 opacity-0 group-hover:opacity-100 transition-all duration-500">
+            <span class="font-body text-[10px] tracking-[0.3em] uppercase text-gold">Shop Now</span>
+            <i class="fas fa-arrow-right text-gold text-[10px]"></i>
+          </div>
+        </div>
+
+        <div class="absolute top-5 right-5 bg-gold/10 border border-gold/20 px-3 py-1 opacity-0 group-hover:opacity-100 transition-all duration-500">
+          <span class="font-body text-[9px] tracking-widest uppercase text-gold">15+ Items</span>
+        </div>
+      </div>
+
+      <!-- Category 3: Watches -->
+      <div class="group relative overflow-hidden cursor-pointer h-[520px] border border-gold/10 hover:border-gold/40 transition-all duration-500"
+        onclick="scrollToProducts('watches')">
+
+        <img src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49?w=500&q=80"
+          alt="Watches"
+          class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-70 group-hover:opacity-90"/>
+
+        <div class="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/40 to-transparent"></div>
+
+        <div class="absolute top-4 left-4 w-5 h-5 border-t border-l border-gold/0 group-hover:border-gold/60 transition-all duration-500"></div>
+        <div class="absolute top-4 right-4 w-5 h-5 border-t border-r border-gold/0 group-hover:border-gold/60 transition-all duration-500"></div>
+        <div class="absolute bottom-4 left-4 w-5 h-5 border-b border-l border-gold/0 group-hover:border-gold/60 transition-all duration-500"></div>
+        <div class="absolute bottom-4 right-4 w-5 h-5 border-b border-r border-gold/0 group-hover:border-gold/60 transition-all duration-500"></div>
+
+        <div class="absolute bottom-0 left-0 right-0 p-7 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+          <div class="flex items-center gap-2 mb-3">
+            <i class="fas fa-clock text-gold text-xs"></i>
+            <span class="font-body text-[9px] tracking-[0.5em] uppercase text-gold/70">Collection</span>
+          </div>
+          <h3 class="font-headline text-5xl text-champagne tracking-wider">WATCHES</h3>
+          <p class="font-body text-xs text-silk/50 mt-2 leading-relaxed max-h-0 group-hover:max-h-20 overflow-hidden transition-all duration-500">
+            Classic, sport & luxury timepieces for every wrist and occasion.
+          </p>
+          <div class="flex items-center gap-2 mt-4 opacity-0 group-hover:opacity-100 transition-all duration-500">
+            <span class="font-body text-[10px] tracking-[0.3em] uppercase text-gold">Shop Now</span>
+            <i class="fas fa-arrow-right text-gold text-[10px]"></i>
+          </div>
+        </div>
+
+        <div class="absolute top-5 right-5 bg-gold/10 border border-gold/20 px-3 py-1 opacity-0 group-hover:opacity-100 transition-all duration-500">
+          <span class="font-body text-[9px] tracking-widest uppercase text-gold">25+ Items</span>
+        </div>
+      </div>
+
+      <!-- Category 4: Shades -->
+      <div class="group relative overflow-hidden cursor-pointer h-[520px] border border-gold/10 hover:border-gold/40 transition-all duration-500 md:mt-10"
+        onclick="scrollToProducts('shades')">
+
+        <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=500&q=80"
+          alt="Shades"
+          class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-70 group-hover:opacity-90"/>
+
+        <div class="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/40 to-transparent"></div>
+
+        <div class="absolute top-4 left-4 w-5 h-5 border-t border-l border-gold/0 group-hover:border-gold/60 transition-all duration-500"></div>
+        <div class="absolute top-4 right-4 w-5 h-5 border-t border-r border-gold/0 group-hover:border-gold/60 transition-all duration-500"></div>
+        <div class="absolute bottom-4 left-4 w-5 h-5 border-b border-l border-gold/0 group-hover:border-gold/60 transition-all duration-500"></div>
+        <div class="absolute bottom-4 right-4 w-5 h-5 border-b border-r border-gold/0 group-hover:border-gold/60 transition-all duration-500"></div>
+
+        <div class="absolute bottom-0 left-0 right-0 p-7 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+          <div class="flex items-center gap-2 mb-3">
+            <i class="fas fa-glasses text-gold text-xs"></i>
+            <span class="font-body text-[9px] tracking-[0.5em] uppercase text-gold/70">Collection</span>
+          </div>
+          <h3 class="font-headline text-5xl text-champagne tracking-wider">SHADES</h3>
+          <p class="font-body text-xs text-silk/50 mt-2 leading-relaxed max-h-0 group-hover:max-h-20 overflow-hidden transition-all duration-500">
+            UV-protected designer sunglasses for bold statements in any weather.
+          </p>
+          <div class="flex items-center gap-2 mt-4 opacity-0 group-hover:opacity-100 transition-all duration-500">
+            <span class="font-body text-[10px] tracking-[0.3em] uppercase text-gold">Shop Now</span>
+            <i class="fas fa-arrow-right text-gold text-[10px]"></i>
+          </div>
+        </div>
+
+        <div class="absolute top-5 right-5 bg-gold/10 border border-gold/20 px-3 py-1 opacity-0 group-hover:opacity-100 transition-all duration-500">
+          <span class="font-body text-[9px] tracking-widest uppercase text-gold">18+ Items</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom marquee ticker -->
+    <div class="mt-16 overflow-hidden border-t border-b border-gold/40 py-4">
+      <div class="flex gap-12 animate-marquee whitespace-nowrap" id="marquee">
+        <span class="font-headline text-2xl tracking-widest text-champagne/50">JEWELRY</span>
+        <span class="font-headline text-2xl tracking-widest text-gold/50">✦</span>
+        <span class="font-headline text-2xl tracking-widest text-champagne/50">BAGS</span>
+        <span class="font-headline text-2xl tracking-widest text-gold/50">✦</span>
+        <span class="font-headline text-2xl tracking-widest text-champagne/50">WATCHES</span>
+        <span class="font-headline text-2xl tracking-widest text-gold/50">✦</span>
+        <span class="font-headline text-2xl tracking-widest text-champagne/50">SHADES</span>
+        <span class="font-headline text-2xl tracking-widest text-gold/50">✦</span>
+        <span class="font-headline text-2xl tracking-widest text-champagne/50">Rose-fashion-accessories</span>
+        <span class="font-headline text-2xl tracking-widest text-gold/50">✦</span>
+        <span class="font-headline text-2xl tracking-widest text-champagne/50">JEWELRY</span>
+        <span class="font-headline text-2xl tracking-widest text-gold/50">✦</span>
+        <span class="font-headline text-2xl tracking-widest text-champagne/50">BAGS</span>
+        <span class="font-headline text-2xl tracking-widest text-gold/50">✦</span>
+        <span class="font-headline text-2xl tracking-widest text-champagne/50">WATCHES</span>
+        <span class="font-headline text-2xl tracking-widest text-gold/50">✦</span>
+        <span class="font-headline text-2xl tracking-widest text-champagne/50">SHADES</span>
+        <span class="font-headline text-2xl tracking-widest text-gold/50">✦</span>
+        <span class="font-headline text-2xl tracking-widest text-champagne/50">Rose-fashion-accessories</span>
+        <span class="font-headline text-2xl tracking-widest text-gold/50">✦</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bottom gold line -->
+  <div class="absolute bottom-0 left-0 gold-line"></div>
+
+</section>
+
+
+<!-- ========== PRODUCTS SECTION ========== -->
+<section id="products" class="relative py-24 md:py-36 bg-charcoal overflow-hidden">
+
+  <!-- Decorative elements -->
+  <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_#D4AF3708_0%,_transparent_60%)]"></div>
+  <div class="absolute top-0 left-0 gold-line"></div>
+
+  <!-- Big decorative background text -->
+  <div class="absolute bottom-0 right-0 font-headline text-[120px] md:text-[200px] text-white/[0.02] whitespace-nowrap select-none pointer-events-none leading-none tracking-widest">
+    PRODUCTS
+  </div>
+
+  <div class="max-w-7xl mx-auto px-6 md:px-16">
+
+    <!-- Section Header -->
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-12">
+      <div class="flex flex-col gap-4">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-px bg-gold"></div>
+          <span class="font-body text-[10px] tracking-[0.5em] uppercase text-gold/70">Hand Picked</span>
+        </div>
+        <h2 class="font-headline text-6xl md:text-8xl text-champagne tracking-wider leading-none">
+          FEATURED <br/>
+          <span class="gold-shimmer">PRODUCTS</span>
+        </h2>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="flex flex-wrap gap-2" id="product-filters">
+        <button onclick="filterProducts('all')" data-filter="all"
+          class="prod-filter font-body text-[10px] tracking-[0.3em] uppercase px-5 py-2.5 bg-gold text-obsidian border border-gold transition-all duration-300">
+          All
+        </button>
+        <button onclick="filterProducts('jewelry')" data-filter="jewelry"
+          class="prod-filter font-body text-[10px] tracking-[0.3em] uppercase px-5 py-2.5 border border-champagne/10 text-champagne/40 hover:border-gold hover:text-gold transition-all duration-300">
+          Jewelry
+        </button>
+        <button onclick="filterProducts('bags')" data-filter="bags"
+          class="prod-filter font-body text-[10px] tracking-[0.3em] uppercase px-5 py-2.5 border border-champagne/10 text-champagne/40 hover:border-gold hover:text-gold transition-all duration-300">
+          Bags
+        </button>
+        <button onclick="filterProducts('watches')" data-filter="watches"
+          class="prod-filter font-body text-[10px] tracking-[0.3em] uppercase px-5 py-2.5 border border-champagne/10 text-champagne/40 hover:border-gold hover:text-gold transition-all duration-300">
+          Watches
+        </button>
+        <button onclick="filterProducts('shades')" data-filter="shades"
+          class="prod-filter font-body text-[10px] tracking-[0.3em] uppercase px-5 py-2.5 border border-champagne/10 text-champagne/40 hover:border-gold hover:text-gold transition-all duration-300">
+          Shades
+        </button>
+      </div>
+    </div>
+
+    <!-- Gender Sub Filter -->
+    <div class="flex gap-3 mb-10">
+      <button onclick="filterGender('all')" data-gf="all"
+        class="gend-filter font-body text-[10px] tracking-[0.3em] uppercase px-4 py-2 bg-champagne/10 text-champagne/60 border border-champagne/10 hover:border-gold hover:text-gold transition-all duration-300">
+        All
+      </button>
+      <button onclick="filterGender('female')" data-gf="female"
+        class="gend-filter font-body text-[10px] tracking-[0.3em] uppercase px-4 py-2 border border-champagne/10 text-champagne/40 hover:border-gold hover:text-gold transition-all duration-300">
+        ♀ Women
+      </button>
+      <button onclick="filterGender('male')" data-gf="male"
+        class="gend-filter font-body text-[10px] tracking-[0.3em] uppercase px-4 py-2 border border-champagne/10 text-champagne/40 hover:border-gold hover:text-gold transition-all duration-300">
+        ♂ Men
+      </button>
+    </div>
+
+    <!-- Products Grid -->
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6" id="products-grid">
+
+      <!-- Product 1 — Jewelry Female -->
+      <div class="prod-card group relative bg-graphite border border-white/5 hover:border-gold/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-gold/10"
+        data-cat="jewelry" data-gender="female">
+        <div class="relative overflow-hidden h-56 md:h-72">
+          <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=400&q=80"
+            alt="Gold Necklace"
+            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-graphite/90 via-transparent to-transparent"></div>
+          <!-- Wishlist -->
+          <button class="absolute top-3 right-3 w-8 h-8 bg-obsidian/70 border border-white/10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 hover:border-gold">
+            <i class="fas fa-heart text-gold/60 text-xs"></i>
+          </button>
+          <!-- Badge -->
+          <div class="absolute top-3 left-3 bg-gold px-2 py-1">
+            <span class="font-body text-[9px] tracking-widest uppercase text-obsidian">New</span>
+          </div>
+          <!-- Gender tag -->
+          <div class="absolute bottom-3 right-3 font-body text-[9px] tracking-widest uppercase text-champagne/40 border border-white/10 px-2 py-1">
+            ♀ Women
+          </div>
+        </div>
+        <div class="p-4 md:p-5">
+          <p class="font-body text-[10px] tracking-[0.3em] uppercase text-gold/50 mb-1">Jewelry</p>
+          <h4 class="font-display text-lg text-champagne italic mb-1">Gold Chain Necklace</h4>
+          <p class="font-body text-xs text-silk/40 leading-relaxed mb-4">Elegant 18k gold plated chain for everyday luxury.</p>
+          <div class="flex items-center justify-between">
+            <span class="font-headline text-xl text-gold tracking-wider">₦,000</span>
+            <button onclick="quickOrder('Gold Chain Necklace', '₦,000')"
+              class="font-body text-[10px] tracking-[0.2em] uppercase px-4 py-2 border border-gold/40 text-gold hover:bg-gold hover:text-obsidian transition-all duration-300">
+              Order
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 2 — Bags Female -->
+      <div class="prod-card group relative bg-graphite border border-white/5 hover:border-gold/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-gold/10"
+        data-cat="bags" data-gender="female">
+        <div class="relative overflow-hidden h-56 md:h-72">
+          <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=400&q=80"
+            alt="Luxury Handbag"
+            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-graphite/90 via-transparent to-transparent"></div>
+          <button class="absolute top-3 right-3 w-8 h-8 bg-obsidian/70 border border-white/10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 hover:border-gold">
+            <i class="fas fa-heart text-gold/60 text-xs"></i>
+          </button>
+          <div class="absolute top-3 left-3 bg-amber px-2 py-1">
+            <span class="font-body text-[9px] tracking-widest uppercase text-obsidian">Hot</span>
+          </div>
+          <div class="absolute bottom-3 right-3 font-body text-[9px] tracking-widests uppercase text-champagne/40 border border-white/10 px-2 py-1">
+            ♀ Women
+          </div>
+        </div>
+        <div class="p-4 md:p-5">
+          <p class="font-body text-[10px] tracking-[0.3em] uppercase text-gold/50 mb-1">Bags</p>
+          <h4 class="font-display text-lg text-champagne italic mb-1">Luxury Tote Bag</h4>
+          <p class="font-body text-xs text-silk/40 leading-relaxed mb-4">Premium leather tote with gold hardware accents.</p>
+          <div class="flex items-center justify-between">
+            <span class="font-headline text-xl text-gold tracking-wider">₦,000</span>
+            <button onclick="quickOrder('Luxury Tote Bag', '₦,000')"
+              class="font-body text-[10px] tracking-[0.2em] uppercase px-4 py-2 border border-gold/40 text-gold hover:bg-gold hover:text-obsidian transition-all duration-300">
+              Order
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 3 — Watches Male -->
+      <div class="prod-card group relative bg-graphite border border-white/5 hover:border-gold/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-gold/10"
+        data-cat="watches" data-gender="male">
+        <div class="relative overflow-hidden h-56 md:h-72">
+          <img src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49?w=400&q=80"
+            alt="Luxury Watch"
+            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-graphite/90 via-transparent to-transparent"></div>
+          <button class="absolute top-3 right-3 w-8 h-8 bg-obsidian/70 border border-white/10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 hover:border-gold">
+            <i class="fas fa-heart text-gold/60 text-xs"></i>
+          </button>
+          <div class="absolute top-3 left-3 bg-gold px-2 py-1">
+            <span class="font-body text-[9px] tracking-widest uppercase text-obsidian">Premium</span>
+          </div>
+          <div class="absolute bottom-3 right-3 font-body text-[9px] tracking-widests uppercase text-champagne/40 border border-white/10 px-2 py-1">
+            ♂ Men
+          </div>
+        </div>
+        <div class="p-4 md:p-5">
+          <p class="font-body text-[10px] tracking-[0.3em] uppercase text-gold/50 mb-1">Watches</p>
+          <h4 class="font-display text-lg text-champagne italic mb-1">Executive Timepiece</h4>
+          <p class="font-body text-xs text-silk/40 leading-relaxed mb-4">Stainless steel luxury watch with sapphire crystal glass.</p>
+          <div class="flex items-center justify-between">
+            <span class="font-headline text-xl text-gold tracking-wider">₦,000</span>
+            <button onclick="quickOrder('Executive Timepiece', '₦,000')"
+              class="font-body text-[10px] tracking-[0.2em] uppercase px-4 py-2 border border-gold/40 text-gold hover:bg-gold hover:text-obsidian transition-all duration-300">
+              Order
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 4 — Shades Unisex -->
+      <div class="prod-card group relative bg-graphite border border-white/5 hover:border-gold/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-gold/10"
+        data-cat="shades" data-gender="female">
+        <div class="relative overflow-hidden h-56 md:h-72">
+          <img src="gla.png"
+            alt="Designer Shades"
+            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-graphite/90 via-transparent to-transparent"></div>
+          <button class="absolute top-3 right-3 w-8 h-8 bg-obsidian/70 border border-white/10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 hover:border-gold">
+            <i class="fas fa-heart text-gold/60 text-xs"></i>
+          </button>
+          <div class="absolute top-3 left-3 bg-gold px-2 py-1">
+            <span class="font-body text-[9px] tracking-widest uppercase text-obsidian">Trending</span>
+          </div>
+          <div class="absolute bottom-3 right-3 font-body text-[9px] uppercase text-champagne/40 border border-white/10 px-2 py-1">
+            ♀ Women
+          </div>
+        </div>
+        <div class="p-4 md:p-5">
+          <p class="font-body text-[10px] tracking-[0.3em] uppercase text-gold/50 mb-1">Shades</p>
+          <h4 class="font-display text-lg text-champagne italic mb-1">Oversized Sunglasses</h4>
+          <p class="font-body text-xs text-silk/40 leading-relaxed mb-4">UV400 protection with polarized lenses. Statement piece.</p>
+          <div class="flex items-center justify-between">
+            <span class="font-headline text-xl text-gold tracking-wider">₦,000</span>
+            <button onclick="quickOrder('Oversized Sunglasses', '₦,000')"
+              class="font-body text-[10px] tracking-[0.2em] uppercase px-4 py-2 border border-gold/40 text-gold hover:bg-gold hover:text-obsidian transition-all duration-300">
+              Order
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 5 — Jewelry Male -->
+      <div class="prod-card group relative bg-graphite border border-white/5 hover:border-gold/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-gold/10"
+        data-cat="jewelry" data-gender="male">
+        <div class="relative overflow-hidden h-56 md:h-72">
+          <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=400&q=80"
+            alt="Men Bracelet"
+            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-graphite/90 via-transparent to-transparent"></div>
+          <button class="absolute top-3 right-3 w-8 h-8 bg-obsidian/70 border border-white/10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 hover:border-gold">
+            <i class="fas fa-heart text-gold/60 text-xs"></i>
+          </button>
+          <div class="absolute bottom-3 right-3 font-body text-[9px] uppercase text-champagne/40 border border-white/10 px-2 py-1">
+            ♂ Men
+          </div>
+        </div>
+        <div class="p-4 md:p-5">
+          <p class="font-body text-[10px] tracking-[0.3em] uppercase text-gold/50 mb-1">Jewelry</p>
+          <h4 class="font-display text-lg text-champagne italic mb-1">Men's Steel Bracelet</h4>
+          <p class="font-body text-xs text-silk/40 leading-relaxed mb-4">Bold stainless steel bracelet with brushed gold finish.</p>
+          <div class="flex items-center justify-between">
+            <span class="font-headline text-xl text-gold tracking-wider">₦,000</span>
+            <button onclick="quickOrder('Men Steel Bracelet', '₦,000')"
+              class="font-body text-[10px] tracking-[0.2em] uppercase px-4 py-2 border border-gold/40 text-gold hover:bg-gold hover:text-obsidian transition-all duration-300">
+              Order
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 6 — Bags Male -->
+      <div class="prod-card group relative bg-graphite border border-white/5 hover:border-gold/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-gold/10"
+        data-cat="bags" data-gender="male">
+        <div class="relative overflow-hidden h-56 md:h-72">
+          <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&q=80"
+            alt="Men Backpack"
+            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-graphite/90 via-transparent to-transparent"></div>
+          <button class="absolute top-3 right-3 w-8 h-8 bg-obsidian/70 border border-white/10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 hover:border-gold">
+            <i class="fas fa-heart text-gold/60 text-xs"></i>
+          </button>
+          <div class="absolute top-3 left-3 bg-gold px-2 py-1">
+            <span class="font-body text-[9px] tracking-widest uppercase text-obsidian">New</span>
+          </div>
+          <div class="absolute bottom-3 right-3 font-body text-[9px] uppercase text-champagne/40 border border-white/10 px-2 py-1">
+            ♂ Men
+          </div>
+        </div>
+        <div class="p-4 md:p-5">
+          <p class="font-body text-[10px] tracking-[0.3em] uppercase text-gold/50 mb-1">Bags</p>
+          <h4 class="font-display text-lg text-champagne italic mb-1">Premium Backpack</h4>
+          <p class="font-body text-xs text-silk/40 leading-relaxed mb-4">Anti-theft leather backpack with laptop compartment.</p>
+          <div class="flex items-center justify-between">
+            <span class="font-headline text-xl text-gold tracking-wider">₦,000</span>
+            <button onclick="quickOrder('Premium Backpack', '₦,000')"
+              class="font-body text-[10px] tracking-[0.2em] uppercase px-4 py-2 border border-gold/40 text-gold hover:bg-gold hover:text-obsidian transition-all duration-300">
+              Order
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 7 — Watches Female -->
+      <div class="prod-card group relative bg-graphite border border-white/5 hover:border-gold/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-gold/10"
+        data-cat="watches" data-gender="female">
+        <div class="relative overflow-hidden h-56 md:h-72">
+          <img src="https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?w=400&q=80"
+            alt="Ladies Watch"
+            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-graphite/90 via-transparent to-transparent"></div>
+          <button class="absolute top-3 right-3 w-8 h-8 bg-obsidian/70 border border-white/10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 hover:border-gold">
+            <i class="fas fa-heart text-gold/60 text-xs"></i>
+          </button>
+          <div class="absolute top-3 left-3 bg-amber px-2 py-1">
+            <span class="font-body text-[9px] tracking-widest uppercase text-obsidian">Popular</span>
+          </div>
+          <div class="absolute bottom-3 right-3 font-body text-[9px] uppercase text-champagne/40 border border-white/10 px-2 py-1">
+            ♀ Women
+          </div>
+        </div>
+        <div class="p-4 md:p-5">
+          <p class="font-body text-[10px] tracking-[0.3em] uppercase text-gold/50 mb-1">Watches</p>
+          <h4 class="font-display text-lg text-champagne italic mb-1">Rose Gold Ladies Watch</h4>
+          <p class="font-body text-xs text-silk/40 leading-relaxed mb-4">Slim rose gold timepiece with diamond-set bezel.</p>
+          <div class="flex items-center justify-between">
+            <span class="font-headline text-xl text-gold tracking-wider">₦,000</span>
+            <button onclick="quickOrder('Rose Gold Ladies Watch', '₦,000')"
+              class="font-body text-[10px] tracking-[0.2em] uppercase px-4 py-2 border border-gold/40 text-gold hover:bg-gold hover:text-obsidian transition-all duration-300">
+              Order
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 8 — Shades Male -->
+      <div class="prod-card group relative bg-graphite border border-white/5 hover:border-gold/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-gold/10"
+        data-cat="shades" data-gender="male">
+        <div class="relative overflow-hidden h-56 md:h-72">
+          <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=400&q=80"
+            alt="Men Shades"
+            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-graphite/90 via-transparent to-transparent"></div>
+          <button class="absolute top-3 right-3 w-8 h-8 bg-obsidian/70 border border-white/10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 hover:border-gold">
+            <i class="fas fa-heart text-gold/60 text-xs"></i>
+          </button>
+          <div class="absolute top-3 left-3 bg-gold px-2 py-1">
+            <span class="font-body text-[9px] tracking-widest uppercase text-obsidian">Exclusive</span>
+          </div>
+          <div class="absolute bottom-3 right-3 font-body text-[9px] uppercase text-champagne/40 border border-white/10 px-2 py-1">
+            ♂ Men
+          </div>
+        </div>
+        <div class="p-4 md:p-5">
+          <p class="font-body text-[10px] tracking-[0.3em] uppercase text-gold/50 mb-1">Shades</p>
+          <h4 class="font-display text-lg text-champagne italic mb-1">Aviator Sunglasses</h4>
+          <p class="font-body text-xs text-silk/40 leading-relaxed mb-4">Classic aviator with gold frame and mirrored lenses.</p>
+          <div class="flex items-center justify-between">
+            <span class="font-headline text-xl text-gold tracking-wider">₦,000</span>
+            <button onclick="quickOrder('Aviator Sunglasses', '₦,000')"
+              class="font-body text-[10px] tracking-[0.2em] uppercase px-4 py-2 border border-gold/40 text-gold hover:bg-gold hover:text-obsidian transition-all duration-300">
+              Order
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom CTA -->
+    <div class="mt-16 flex flex-col items-center gap-4 text-center">
+      <p class="font-body text-xs text-champagne/20 tracking-widest uppercase">
+        Can't find what you're looking for? Send us a message
+      </p>
+      <a href="#order"
+        class="font-body text-[10px] tracking-[0.3em] uppercase px-10 py-4 border border-gold text-gold hover:bg-gold hover:text-obsidian transition-all duration-300">
+        Place a Custom Order
+      </a>
+    </div>
+
+  </div>
+
+  <div class="absolute bottom-0 left-0 gold-line"></div>
+</section>
+
+<!-- ========== QUICK ORDER MODAL ========== -->
+<div id="quick-modal" class="fixed inset-0 z-[999] bg-obsidian/95 flex items-center justify-center hidden px-4">
+  <div class="relative bg-charcoal border border-gold/20 w-full max-w-md p-8 shadow-2xl">
+    <!-- Gold top accent -->
+    <div class="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-amber via-gold to-champagne"></div>
+
+    <!-- Close -->
+    <button onclick="closeModal()"
+      class="absolute top-4 right-4 w-8 h-8 border border-white/10 flex items-center justify-center text-champagne/40 hover:border-gold hover:text-gold transition-all duration-300">
+      <i class="fas fa-times text-xs"></i>
+    </button>
+
+    <div class="flex flex-col gap-1 mb-6">
+      <span class="font-body text-[10px] tracking-[0.4em] uppercase text-gold/60">Quick Order</span>
+      <h3 class="font-headline text-3xl text-champagne tracking-wider">ORDER ITEM</h3>
+      <p class="font-display italic text-silk/50 text-sm mt-1" id="modal-product-name">Product Name</p>
+      <p class="font-headline text-2xl text-gold tracking-wider mt-1" id="modal-product-price">₦0</p>
+    </div>
+
+    <form onsubmit="submitQuickOrder(event)" class="flex flex-col gap-4">
+      <div class="flex flex-col gap-1.5">
+        <label class="font-body text-[10px] tracking-[0.3em] uppercase text-champagne/30">Full Name *</label>
+        <input type="text" id="qo-name" required placeholder="Your full name"
+          class="font-body text-sm px-4 py-3 bg-obsidian border border-white/10 text-champagne placeholder-champagne/20 focus:outline-none focus:border-gold transition-colors duration-300"/>
+      </div>
+      <div class="flex flex-col gap-1.5">
+        <label class="font-body text-[10px] tracking-[0.3em] uppercase text-champagne/30">Phone Number *</label>
+        <input type="tel" id="qo-phone" required placeholder="08XXXXXXXXX"
+          class="font-body text-sm px-4 py-3 bg-obsidian border border-white/10 text-champagne placeholder-champagne/20 focus:outline-none focus:border-gold transition-colors duration-300"/>
+      </div>
+      <div class="flex flex-col gap-1.5">
+        <label class="font-body text-[10px] tracking-[0.3em] uppercase text-champagne/30">Delivery Address *</label>
+        <input type="text" id="qo-address" required placeholder="Your delivery address"
+          class="font-body text-sm px-4 py-3 bg-obsidian border border-white/10 text-champagne placeholder-champagne/20 focus:outline-none focus:border-gold transition-colors duration-300"/>
+      </div>
+      <div class="flex flex-col gap-1.5">
+        <label class="font-body text-[10px] tracking-[0.3em] uppercase text-champagne/30">Quantity</label>
+        <input type="number" id="qo-qty" value="1" min="1"
+          class="font-body text-sm px-4 py-3 bg-obsidian border border-white/10 text-champagne focus:outline-none focus:border-gold transition-colors duration-300"/>
+      </div>
+      <button type="submit"
+        class="w-full font-body text-[10px] tracking-[0.3em] uppercase py-4 bg-gold text-obsidian hover:bg-amber transition-all duration-300 mt-2">
+        <span id="qo-btn-text">Confirm Order via WhatsApp</span>
+      </button>
+    </form>
+  </div>
+</div>
+
+
+<!-- ========== ORDER SECTION ========== -->
+<section id="order" class="relative py-24 md:py-36 bg-obsidian overflow-hidden">
+
+  <!-- Decorative elements -->
+  <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_#D4AF3710_0%,_transparent_55%)]"></div>
+  <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_#C8922A08_0%,_transparent_55%)]"></div>
+  <div class="absolute top-0 left-0 gold-line"></div>
+
+  <!-- Big decorative background text -->
+  <div class="absolute top-10 left-1/2 -translate-x-1/2 font-headline text-[100px] md:text-[180px] text-white/[0.02] whitespace-nowrap select-none pointer-events-none leading-none tracking-widest">
+    ORDER
+  </div>
+
+  <!-- Decorative grid -->
+  <div class="absolute inset-0 z-0 opacity-[0.02]"
+    style="background-image: linear-gradient(#D4AF37 1px, transparent 1px), linear-gradient(90deg, #D4AF37 1px, transparent 1px);
+           background-size: 60px 60px;">
+  </div>
+
+  <div class="max-w-7xl mx-auto px-6 md:px-16">
+
+    <!-- Section Header -->
+    <div class="flex flex-col items-center text-center gap-4 mb-16">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-px bg-gold"></div>
+        <span class="font-body text-[10px] tracking-[0.5em] uppercase text-gold/70">Place Your Order</span>
+        <div class="w-10 h-px bg-gold"></div>
+      </div>
+      <h2 class="font-headline text-6xl md:text-8xl text-champagne tracking-wider leading-none">
+        ORDER <span class="gold-shimmer">NOW</span>
+      </h2>
+      <p class="font-display italic text-silk/50 max-w-xl leading-relaxed text-lg">
+        Fill the form below and we'll reach out to confirm your order. 
+        Fast delivery across Lagos & all of Nigeria.
+      </p>
+    </div>
+
+    <!-- Order Layout -->
+    <div class="grid md:grid-cols-5 gap-10 items-start">
+
+      <!-- Left: Info Panel -->
+      <div class="md:col-span-2 flex flex-col gap-6">
+
+        <!-- Why Order With Us -->
+        <div class="bg-charcoal border border-gold/15 p-8 relative">
+          <div class="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-amber via-gold to-transparent"></div>
+
+          <h3 class="font-headline text-2xl text-champagne tracking-wider mb-6">WHY Rose-fashion-accessories</h3>
+
+          <div class="flex flex-col gap-5">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 border border-gold/20 flex items-center justify-center shrink-0">
+                <i class="fas fa-shield-alt text-gold text-xs"></i>
+              </div>
+              <div>
+                <p class="font-body text-sm text-champagne/80 tracking-wide">100% Authentic Products</p>
+                <p class="font-body text-xs text-silk/30 mt-1 leading-relaxed">Every item is verified genuine. No fakes, no compromises.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 border border-gold/20 flex items-center justify-center shrink-0">
+                <i class="fas fa-truck text-gold text-xs"></i>
+              </div>
+              <div>
+                <p class="font-body text-sm text-champagne/80 tracking-wide">Fast Nationwide Delivery</p>
+                <p class="font-body text-xs text-silk/30 mt-1 leading-relaxed">Lagos same day. Other states within 2-3 business days.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 border border-gold/20 flex items-center justify-center shrink-0">
+                <i class="fas fa-undo text-gold text-xs"></i>
+              </div>
+              <div>
+                <p class="font-body text-sm text-champagne/80 tracking-wide">Easy Returns Policy</p>
+                <p class="font-body text-xs text-silk/30 mt-1 leading-relaxed">Not satisfied? We'll sort it out within 48 hours.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 border border-gold/20 flex items-center justify-center shrink-0">
+                <i class="fas fa-headset text-gold text-xs"></i>
+              </div>
+              <div>
+                <p class="font-body text-sm text-champagne/80 tracking-wide">24/7 Customer Support</p>
+                <p class="font-body text-xs text-silk/30 mt-1 leading-relaxed">Always available on WhatsApp to assist you.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 border border-gold/20 flex items-center justify-center shrink-0">
+                <i class="fas fa-lock text-gold text-xs"></i>
+              </div>
+              <div>
+                <p class="font-body text-sm text-champagne/80 tracking-wide">Secure Payments</p>
+                <p class="font-body text-xs text-silk/30 mt-1 leading-relaxed">Pay on delivery or via bank transfer. Safe & easy.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Quick Links -->
+        <div class="flex flex-col gap-3">
+          <p class="font-body text-[10px] tracking-[0.4em] uppercase text-champagne/20">Reach Us Directly</p>
+          <a href="https://wa.me/9998105093592" target="_blank"
+            class="flex items-center gap-3 px-5 py-3 bg-[#25D366]/10 border border-[#25D366]/20 text-[#25D366] hover:bg-[#25D366]/20 transition-all duration-300">
+            <i class="fab fa-whatsapp text-lg"></i>
+            <div>
+              <p class="font-body text-xs tracking-wide">Chat on WhatsApp</p>
+              <p class="font-body text-[10px] text-[#25D366]/60 mt-0.5">0000005093592</p>
+            </div>
+          </a>
+          <a href="mailto:ROSEFASHION@gmail.com"
+            class="flex items-center gap-3 px-5 py-3 bg-gold/10 border border-gold/20 text-gold hover:bg-gold/20 transition-all duration-300">
+            <i class="fas fa-envelope text-sm"></i>
+            <div>
+              <p class="font-body text-xs tracking-wide">Send an Email</p>
+              <p class="font-body text-[10px] text-gold/50 mt-0.5">ROSEFASHION@gmail.com</p>
+            </div>
+          </a>
+          <a href="tel:+9998105093592"
+            class="flex items-center gap-3 px-5 py-3 bg-champagne/5 border border-champagne/10 text-champagne/60 hover:border-gold hover:text-gold transition-all duration-300">
+            <i class="fas fa-phone text-sm"></i>
+            <div>
+              <p class="font-body text-xs tracking-wide">Call Us</p>
+              <p class="font-body text-[10px] text-champagne/30 mt-0.5">000000000076802</p>
+            </div>
+          </a>
+        </div>
+
+        <!-- Delivery Info Card -->
+        <div class="bg-gold/5 border border-gold/10 p-6">
+          <p class="font-headline text-lg text-gold tracking-wider mb-3">DELIVERY INFO</p>
+          <div class="flex flex-col gap-2">
+            <div class="flex justify-between items-center py-2 border-b border-white/5">
+              <span class="font-body text-xs text-champagne/40">Lagos Island/Mainland</span>
+              <span class="font-body text-xs text-gold">Same Day</span>
+            </div>
+            <div class="flex justify-between items-center py-2 border-b border-white/5">
+              <span class="font-body text-xs text-champagne/40">Other Lagos Areas</span>
+              <span class="font-body text-xs text-gold">1-2 Days</span>
+            </div>
+            <div class="flex justify-between items-center py-2 border-b border-white/5">
+              <span class="font-body text-xs text-champagne/40">Abuja / PH</span>
+              <span class="font-body text-xs text-gold">2-3 Days</span>
+            </div>
+            <div class="flex justify-between items-center py-2">
+              <span class="font-body text-xs text-champagne/40">Other States</span>
+              <span class="font-body text-xs text-gold">3-5 Days</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right: Order Form -->
+      <div class="md:col-span-3 bg-charcoal border border-gold/15 p-8 md:p-10 relative">
+        <div class="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-amber via-gold to-champagne"></div>
+
+        <!-- Corner accents -->
+        <div class="absolute top-4 left-4 w-5 h-5 border-t border-l border-gold/20"></div>
+        <div class="absolute top-4 right-4 w-5 h-5 border-t border-r border-gold/20"></div>
+        <div class="absolute bottom-4 left-4 w-5 h-5 border-b border-l border-gold/20"></div>
+        <div class="absolute bottom-4 right-4 w-5 h-5 border-b border-r border-gold/20"></div>
+
+        <h3 class="font-headline text-3xl text-champagne tracking-wider mb-8">FILL ORDER DETAILS</h3>
+
+        <form id="order-form" onsubmit="submitOrder(event)" class="flex flex-col gap-5">
+
+          <!-- Name & Phone -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <div class="flex flex-col gap-2">
+              <label class="font-body text-[10px] tracking-[0.3em] uppercase text-champagne/30">Full Name *</label>
+              <input type="text" id="o-name" required placeholder="e.g. Chisom Bello"
+                class="font-body text-sm px-4 py-3 bg-obsidian border border-white/10 text-champagne placeholder-champagne/20 focus:outline-none focus:border-gold transition-colors duration-300"/>
+            </div>
+            <div class="flex flex-col gap-2">
+              <label class="font-body text-[10px] tracking-[0.3em] uppercase text-champagne/30">Phone Number *</label>
+              <input type="tel" id="o-phone" required placeholder="08XXXXXXXXX"
+                class="font-body text-sm px-4 py-3 bg-obsidian border border-white/10 text-champagne placeholder-champagne/20 focus:outline-none focus:border-gold transition-colors duration-300"/>
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div class="flex flex-col gap-2">
+            <label class="font-body text-[10px] tracking-[0.3em] uppercase text-champagne/30">Email Address</label>
+            <input type="email" id="o-email" placeholder="your@email.com"
+              class="font-body text-sm px-4 py-3 bg-obsidian border border-white/10 text-champagne placeholder-champagne/20 focus:outline-none focus:border-gold transition-colors duration-300"/>
+          </div>
+
+          <!-- Category & Item -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <div class="flex flex-col gap-2">
+              <label class="font-body text-[10px] tracking-[0.3em] uppercase text-champagne/30">Category *</label>
+              <select id="o-category" required
+                class="font-body text-sm px-4 py-3 bg-obsidian border border-white/10 text-champagne focus:outline-none focus:border-gold transition-colors duration-300 appearance-none cursor-pointer">
+                <option value="" disabled selected>Select category...</option>
+                <option value="Jewelry">💎 Jewelry</option>
+                <option value="Bags">👜 Bags</option>
+                <option value="Watches">⌚ Watches</option>
+                <option value="Shades">🕶️ Shades</option>
+              </select>
+            </div>
+            <div class="flex flex-col gap-2">
+              <label class="font-body text-[10px] tracking-[0.3em] uppercase text-champagne/30">Item Name *</label>
+              <input type="text" id="o-item" required placeholder="e.g. Gold Necklace"
+                class="font-body text-sm px-4 py-3 bg-obsidian border border-white/10 text-champagne placeholder-champagne/20 focus:outline-none focus:border-gold transition-colors duration-300"/>
+            </div>
+          </div>
+
+          <!-- Gender & Quantity -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <div class="flex flex-col gap-2">
+              <label class="font-body text-[10px] tracking-[0.3em] uppercase text-champagne/30">For Who? *</label>
+              <select id="o-gender" required
+                class="font-body text-sm px-4 py-3 bg-obsidian border border-white/10 text-champagne focus:outline-none focus:border-gold transition-colors duration-300 appearance-none cursor-pointer">
+                <option value="" disabled selected>Select...</option>
+                <option value="Women">♀ Women</option>
+                <option value="Men">♂ Men</option>
+                <option value="Unisex">⚥ Unisex</option>
+              </select>
+            </div>
+            <div class="flex flex-col gap-2">
+              <label class="font-body text-[10px] tracking-[0.3em] uppercase text-champagne/30">Quantity *</label>
+              <input type="number" id="o-qty" required min="1" value="1"
+                class="font-body text-sm px-4 py-3 bg-obsidian border border-white/10 text-champagne focus:outline-none focus:border-gold transition-colors duration-300"/>
+            </div>
+          </div>
+
+          <!-- Budget Range -->
+          <div class="flex flex-col gap-2">
+            <label class="font-body text-[10px] tracking-[0.3em] uppercase text-champagne/30">Budget Range</label>
+            <div class="flex flex-wrap gap-2" id="budget-group">
+              <button type="button" onclick="selectBudget(this)" data-budget="Under ₦20,000"
+                class="budget-btn font-body text-[10px] tracking-[0.2em] uppercase px-4 py-2 border border-white/10 text-champagne/40 hover:border-gold hover:text-gold transition-all duration-300">
+                Under ₦20k
+              </button>
+              <button type="button" onclick="selectBudget(this)" data-budget="₦20,000 - ₦50,000"
+                class="budget-btn font-body text-[10px] tracking-[0.2em] uppercase px-4 py-2 border border-white/10 text-champagne/40 hover:border-gold hover:text-gold transition-all duration-300">
+                ₦20k - ₦50k
+              </button>
+              <button type="button" onclick="selectBudget(this)" data-budget="₦50,000 - ₦100,000"
+                class="budget-btn font-body text-[10px] tracking-[0.2em] uppercase px-4 py-2 border border-white/10 text-champagne/40 hover:border-gold hover:text-gold transition-all duration-300">
+                ₦50k - ₦100k
+              </button>
+              <button type="button" onclick="selectBudget(this)" data-budget="Above ₦100,000"
+                class="budget-btn font-body text-[10px] tracking-[0.2em] uppercase px-4 py-2 border border-white/10 text-champagne/40 hover:border-gold hover:text-gold transition-all duration-300">
+                Above ₦100k
+              </button>
+            </div>
+            <input type="hidden" id="o-budget" value=""/>
+          </div>
+
+          <!-- Delivery Address -->
+          <div class="flex flex-col gap-2">
+            <label class="font-body text-[10px] tracking-[0.3em] uppercase text-champagne/30">Delivery Address *</label>
+            <input type="text" id="o-address" required placeholder="Full delivery address"
+              class="font-body text-sm px-4 py-3 bg-obsidian border border-white/10 text-champagne placeholder-champagne/20 focus:outline-none focus:border-gold transition-colors duration-300"/>
+          </div>
+
+          <!-- Payment Method -->
+          <div class="flex flex-col gap-2">
+            <label class="font-body text-[10px] tracking-[0.3em] uppercase text-champagne/30">Payment Method *</label>
+            <div class="flex flex-wrap gap-2">
+              <button type="button" onclick="selectPayment(this)" data-pay="Pay on Delivery"
+                class="pay-btn font-body text-[10px] tracking-[0.2em] uppercase px-4 py-2 border border-white/10 text-champagne/40 hover:border-gold hover:text-gold transition-all duration-300">
+                Pay on Delivery
+              </button>
+              <button type="button" onclick="selectPayment(this)" data-pay="Bank Transfer"
+                class="pay-btn font-body text-[10px] tracking-[0.2em] uppercase px-4 py-2 border border-white/10 text-champagne/40 hover:border-gold hover:text-gold transition-all duration-300">
+                Bank Transfer
+              </button>
+              <button type="button" onclick="selectPayment(this)" data-pay="Online Payment"
+                class="pay-btn font-body text-[10px] tracking-[0.2em] uppercase px-4 py-2 border border-white/10 text-champagne/40 hover:border-gold hover:text-gold transition-all duration-300">
+                Online Payment
+              </button>
+            </div>
+            <input type="hidden" id="o-payment" value=""/>
+          </div>
+
+          <!-- Notes -->
+          <div class="flex flex-col gap-2">
+            <label class="font-body text-[10px] tracking-[0.3em] uppercase text-champagne/30">Additional Notes</label>
+            <textarea id="o-notes" rows="3" placeholder="Color preference, size, special requests..."
+              class="font-body text-sm px-4 py-3 bg-obsidian border border-white/10 text-champagne placeholder-champagne/20 focus:outline-none focus:border-gold transition-colors duration-300 resize-none"></textarea>
+          </div>
+
+          <!-- Submit -->
+          <button type="submit"
+            class="w-full font-body text-[10px] tracking-[0.3em] uppercase py-4 bg-gold text-obsidian hover:bg-amber transition-all duration-300 shadow-lg shadow-gold/20 mt-2">
+            <span id="order-btn-text">Send Order via WhatsApp</span>
+          </button>
+
+          <p class="font-body text-[10px] text-champagne/20 text-center tracking-wide">
+            Your order will be sent directly to us via WhatsApp for confirmation
+          </p>
+
+        </form>
+
+        <!-- Success State -->
+        <div id="order-success" class="hidden flex-col items-center text-center gap-6 py-12">
+          <div class="w-20 h-20 border border-gold/30 flex items-center justify-center relative">
+            <div class="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-gold"></div>
+            <div class="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-gold"></div>
+            <div class="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-gold"></div>
+            <div class="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-gold"></div>
+            <i class="fas fa-check text-gold text-2xl"></i>
+          </div>
+          <div>
+            <h3 class="font-headline text-4xl text-champagne tracking-wider">ORDER SENT!</h3>
+            <p class="font-display italic text-silk/50 mt-2">Your order has been sent via WhatsApp.</p>
+            <p class="font-body text-xs text-champagne/30 mt-1 tracking-wide">We'll confirm within minutes. Thank you for choosing Rose-fashion-accessories 👑</p>
+          </div>
+          <button onclick="resetOrder()"
+            class="font-body text-[10px] tracking-[0.3em] uppercase px-8 py-3 border border-gold text-gold hover:bg-gold hover:text-obsidian transition-all duration-300">
+            Place Another Order
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="absolute bottom-0 left-0 gold-line"></div>
+</section>
+
+<!-- ========== ABOUT SECTION ========== -->
+<section id="about" class="relative py-24 md:py-36 bg-charcoal overflow-hidden">
+
+  <!-- Decorative elements -->
+  <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_#D4AF3708_0%,_transparent_60%)]"></div>
+  <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_#C8922A06_0%,_transparent_60%)]"></div>
+  <div class="absolute top-0 left-0 gold-line"></div>
+
+  <!-- Big decorative background text -->
+  <div class="absolute top-1/2 -translate-y-1/2 -left-10 font-headline text-[150px] md:text-[250px] text-white/[0.02] select-none pointer-events-none leading-none tracking-widest">
+    Rose
+  </div>
+
+  <!-- Decorative grid -->
+  <div class="absolute inset-0 opacity-[0.02]"
+    style="background-image: linear-gradient(#D4AF37 1px, transparent 1px), linear-gradient(90deg, #D4AF37 1px, transparent 1px);
+           background-size: 60px 60px;">
+  </div>
+
+  <div class="max-w-7xl mx-auto px-6 md:px-16">
+
+    <!-- Section Header -->
+    <div class="flex flex-col items-center text-center gap-4 mb-20">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-px bg-gold"></div>
+        <span class="font-body text-[10px] tracking-[0.5em] uppercase text-gold/70">Our Story</span>
+        <div class="w-10 h-px bg-gold"></div>
+      </div>
+      <h2 class="font-headline text-6xl md:text-8xl text-champagne tracking-wider leading-none">
+        ABOUT <span class="gold-shimmer">Rose beauty store</span>
+      </h2>
+    </div>
+
+    <!-- Main Story Grid -->
+    <div class="grid md:grid-cols-2 gap-16 items-center mb-24">
+
+      <!-- Left: Image Stack -->
+      <div class="relative flex justify-center">
+
+        <!-- Back decorative box -->
+        <div class="absolute top-8 left-8 w-full h-full border border-gold/10 max-w-sm"></div>
+
+        <!-- Main image -->
+        <div class="relative w-full max-w-sm h-[480px] border border-gold/25 overflow-hidden z-10">
+          <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&q=80"
+            alt="Rose-fashion-accessories Store"
+            class="w-full h-full object-cover hover:scale-105 transition-transform duration-700 opacity-80"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-obsidian/80 via-transparent to-transparent"></div>
+
+          <!-- Corner accents -->
+          <div class="absolute top-4 left-4 w-6 h-6 border-t-2 border-l-2 border-gold/60"></div>
+          <div class="absolute top-4 right-4 w-6 h-6 border-t-2 border-r-2 border-gold/60"></div>
+          <div class="absolute bottom-4 left-4 w-6 h-6 border-b-2 border-l-2 border-gold/60"></div>
+          <div class="absolute bottom-4 right-4 w-6 h-6 border-b-2 border-r-2 border-gold/60"></div>
+
+          <!-- Label -->
+          <div class="absolute bottom-6 left-6">
+            <p class="font-body text-[10px] tracking-[0.4em] uppercase text-gold/60">Est.</p>
+            <p class="font-headline text-4xl text-champagne tracking-wider">2019</p>
+          </div>
+        </div>
+
+        <!-- Floating stat cards -->
+        <div class="absolute -right-4 top-12 bg-obsidian border border-gold/20 px-5 py-4 z-20 shadow-xl">
+          <p class="font-body text-[10px] tracking-[0.3em] uppercase text-gold/50">Happy Clients</p>
+          <p class="font-headline text-3xl text-gold tracking-wider mt-1">1,000+</p>
+        </div>
+
+        <div class="absolute -left-4 bottom-16 bg-gold px-5 py-4 z-20 shadow-xl">
+          <p class="font-body text-[10px] tracking-[0.2em] uppercase text-obsidian/60">Categories</p>
+          <p class="font-headline text-3xl text-obsidian tracking-wider mt-1">4 Premium</p>
+        </div>
+
+      </div>
+
+      <!-- Right: Story Text -->
+      <div class="flex flex-col gap-7">
+
+        <div class="flex flex-col gap-2">
+          <h3 class="font-headline text-4xl md:text-5xl text-champagne tracking-wider leading-tight">
+            AFRICA'S PREMIUM <br/>
+            <span class="gold-shimmer">LIFESTYLE BRAND</span>
+          </h3>
+        </div>
+
+        <div class="w-16 h-px bg-gold/40"></div>
+
+        <p class="font-body text-sm text-silk/60 leading-relaxed tracking-wide">
+          Rose-fashion-accessories was born from a simple belief — that premium style should 
+          be accessible to every African. Founded in Lagos, we curate the finest 
+          jewelry, bags, watches, and shades for both men and women who refuse 
+          to compromise on quality.
+        </p>
+
+        <p class="font-body text-sm text-silk/60 leading-relaxed tracking-wide">
+          Every piece in our collection is handpicked for its craftsmanship, 
+          authenticity, and ability to elevate your everyday look. We don't 
+          just sell accessories — we help you tell your story through style.
+        </p>
+
+        <p class="font-display italic text-lg text-gold/70 leading-relaxed border-l-2 border-gold/30 pl-5">
+          "Style is not about what you wear — it's about how you own it."
+        </p>
+
+        <!-- Values Grid -->
+        <div class="grid grid-cols-2 gap-4 mt-2">
+          <div class="flex items-start gap-3 p-4 bg-obsidian/50 border border-white/5 hover:border-gold/20 transition-all duration-300">
+            <i class="fas fa-gem text-gold text-sm mt-0.5"></i>
+            <div>
+              <p class="font-body text-xs text-champagne/70 tracking-wide">Premium Quality</p>
+              <p class="font-body text-[10px] text-silk/30 mt-0.5">Only the finest pieces</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3 p-4 bg-obsidian/50 border border-white/5 hover:border-gold/20 transition-all duration-300">
+            <i class="fas fa-globe-africa text-gold text-sm mt-0.5"></i>
+            <div>
+              <p class="font-body text-xs text-champagne/70 tracking-wide">Made for Africa</p>
+              <p class="font-body text-[10px] text-silk/30 mt-0.5">Proudly Lagos based</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3 p-4 bg-obsidian/50 border border-white/5 hover:border-gold/20 transition-all duration-300">
+            <i class="fas fa-users text-gold text-sm mt-0.5"></i>
+            <div>
+              <p class="font-body text-xs text-champagne/70 tracking-wide">Community First</p>
+              <p class="font-body text-[10px] text-silk/30 mt-0.5">1,000+ happy clients</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3 p-4 bg-obsidian/50 border border-white/5 hover:border-gold/20 transition-all duration-300">
+            <i class="fas fa-award text-gold text-sm mt-0.5"></i>
+            <div>
+              <p class="font-body text-xs text-champagne/70 tracking-wide">Trusted Brand</p>
+              <p class="font-body text-[10px] text-silk/30 mt-0.5">5★ rated since 2019</p>
+            </div>
+          </div>
+        </div>
+
+        <a href="#order"
+          class="mt-2 inline-flex items-center gap-3 font-body text-[10px] tracking-[0.3em] uppercase px-8 py-4 bg-gold text-obsidian hover:bg-amber transition-all duration-300 w-fit shadow-lg shadow-gold/20">
+          Shop Our Collection <i class="fas fa-arrow-right text-xs"></i>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- ---- BRAND NUMBERS STRIP ---- -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-px bg-gold/10 border border-gold/10">
+
+      <div class="bg-charcoal flex flex-col items-center text-center py-10 px-6 hover:bg-obsidian transition-all duration-300 group">
+        <p class="font-headline text-5xl md:text-6xl text-gold tracking-wider group-hover:gold-shimmer transition-all duration-300">1K+</p>
+        <p class="font-body text-[10px] tracking-[0.4em] uppercase text-champagne/30 mt-2">Happy Clients</p>
+      </div>
+
+      <div class="bg-charcoal flex flex-col items-center text-center py-10 px-6 hover:bg-obsidian transition-all duration-300 group">
+        <p class="font-headline text-5xl md:text-6xl text-gold tracking-wider group-hover:gold-shimmer transition-all duration-300">4</p>
+        <p class="font-body text-[10px] tracking-[0.4em] uppercase text-champagne/30 mt-2">Categories</p>
+      </div>
+
+      <div class="bg-charcoal flex flex-col items-center text-center py-10 px-6 hover:bg-obsidian transition-all duration-300 group">
+        <p class="font-headline text-5xl md:text-6xl text-gold tracking-wider group-hover:gold-shimmer transition-all duration-300">5★</p>
+        <p class="font-body text-[10px] tracking-[0.4em] uppercase text-champagne/30 mt-2">Average Rating</p>
+      </div>
+
+      <div class="bg-charcoal flex flex-col items-center text-center py-10 px-6 hover:bg-obsidian transition-all duration-300 group">
+        <p class="font-headline text-5xl md:text-6xl text-gold tracking-wider group-hover:gold-shimmer transition-all duration-300">6+</p>
+        <p class="font-body text-[10px] tracking-[0.4em] uppercase text-champagne/30 mt-2">Years In Business</p>
+      </div>
+
+    </div>
+
+    <!-- ---- MISSION STRIP ---- -->
+    <div class="mt-10 bg-obsidian border border-gold/10 p-8 md:p-12 relative overflow-hidden">
+
+      <!-- Decorative -->
+      <div class="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-amber via-gold to-transparent"></div>
+      <div class="absolute top-4 left-4 w-6 h-6 border-t border-l border-gold/20"></div>
+      <div class="absolute top-4 right-4 w-6 h-6 border-t border-r border-gold/20"></div>
+      <div class="absolute bottom-4 left-4 w-6 h-6 border-b border-l border-gold/20"></div>
+      <div class="absolute bottom-4 right-4 w-6 h-6 border-b border-r border-gold/20"></div>
+
+      <!-- Background B -->
+      <div class="absolute right-8 top-1/2 -translate-y-1/2 font-headline text-[120px] text-white/[0.03] select-none leading-none">B</div>
+
+      <div class="grid md:grid-cols-3 gap-8 items-center">
+
+        <div class="md:col-span-2 flex flex-col gap-4">
+          <span class="font-body text-[10px] tracking-[0.5em] uppercase text-gold/50">Our Mission</span>
+          <h3 class="font-headline text-3xl md:text-4xl text-champagne tracking-wider leading-tight">
+            TO MAKE EVERY AFRICAN <br/>
+            <span class="gold-shimmer">LOOK & FEEL PREMIUM</span>
+          </h3>
+          <p class="font-body text-sm text-silk/40 leading-relaxed max-w-xl tracking-wide">
+            We believe style is a language. At Rose-fashion-accessories, we give you 
+            the vocabulary to speak boldly — through every necklace, 
+            every bag, every watch, every pair of shades.
+          </p>
+        </div>
+
+        <div class="flex flex-col gap-3">
+          <a href="#categories"
+            class="font-body text-[10px] tracking-[0.3em] uppercase px-6 py-4 bg-gold text-obsidian hover:bg-amber transition-all duration-300 text-center shadow-lg shadow-gold/20">
+            Shop Collection
+          </a>
+          <a href="#order"
+            class="font-body text-[10px] tracking-[0.3em] uppercase px-6 py-4 border border-gold/30 text-gold hover:bg-gold/10 transition-all duration-300 text-center">
+            Place an Order
+          </a>
+          <a href="https://wa.me/9998105093592" target="_blank"
+            class="font-body text-[10px] tracking-[0.3em] uppercase px-6 py-4 border border-[#25D366]/20 text-[#25D366] hover:bg-[#25D366]/10 transition-all duration-300 text-center flex items-center justify-center gap-2">
+            <i class="fab fa-whatsapp"></i> Chat With Us
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <div class="absolute bottom-0 left-0 gold-line"></div>
+</section>
+
+
+
+<!-- ========== VENDOR / MEET THE OWNER SECTION ========== -->
+<section id="vendor" class="relative py-24 md:py-36 bg-obsidian overflow-hidden">
+
+  <!-- Decorative elements -->
+  <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_#D4AF3708_0%,_transparent_60%)]"></div>
+  <div class="absolute top-0 left-0 gold-line"></div>
+
+  <!-- Big decorative background text -->
+  <div class="absolute top-1/2 -translate-y-1/2 right-0 font-headline text-[150px] md:text-[220px] text-white/[0.02] select-none pointer-events-none leading-none tracking-widest">
+    ROSE
+  </div>
+
+  <!-- Decorative grid -->
+  <div class="absolute inset-0 opacity-[0.015]"
+    style="background-image: linear-gradient(#D4AF37 1px, transparent 1px), linear-gradient(90deg, #D4AF37 1px, transparent 1px);
+           background-size: 60px 60px;">
+  </div>
+
+  <div class="max-w-7xl mx-auto px-6 md:px-16">
+
+    <!-- Section Header -->
+    <div class="flex flex-col items-center text-center gap-4 mb-20">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-px bg-gold"></div>
+        <span class="font-body text-[10px] tracking-[0.5em] uppercase text-gold/70">The Face Behind The Brand</span>
+        <div class="w-10 h-px bg-gold"></div>
+      </div>
+      <h2 class="font-headline text-6xl md:text-8xl text-champagne tracking-wider leading-none">
+        MEET <span class="gold-shimmer">ROSE</span>
+      </h2>
+    </div>
+
+    <!-- Main Layout -->
+    <div class="grid md:grid-cols-2 gap-16 items-center">
+
+      <!-- Left: Vendor Image -->
+      <div class="relative flex justify-center">
+
+        <!-- Back decorative frame -->
+        <div class="absolute top-6 left-6 w-full h-full border border-gold/10 max-w-sm z-0"></div>
+
+        <!-- Image Frame -->
+        <div class="relative w-full max-w-sm h-[520px] border border-gold/30 overflow-hidden z-10">
+
+          <!--
+            =============================================
+            👇 REPLACE THIS SRC WITH ROSE'S REAL PHOTO
+            =============================================
+          -->
+          <img
+            id="vendor-image"
+            src="WhatsApp Image 2026-05-08 at 16.50.17.jpeg"
+            alt="ROSE — Founder of Rose-fashion-accessories"
+            class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700"/>
+
+          <!-- Image overlay -->
+          <div class="absolute inset-0 bg-gradient-to-t from-obsidian/80 via-transparent to-transparent"></div>
+
+          <!-- Corner accents -->
+          <div class="absolute top-4 left-4 w-6 h-6 border-t-2 border-l-2 border-gold/70"></div>
+          <div class="absolute top-4 right-4 w-6 h-6 border-t-2 border-r-2 border-gold/70"></div>
+          <div class="absolute bottom-4 left-4 w-6 h-6 border-b-2 border-l-2 border-gold/70"></div>
+          <div class="absolute bottom-4 right-4 w-6 h-6 border-b-2 border-r-2 border-gold/70"></div>
+
+          <!-- Name label at bottom of image -->
+          <div class="absolute bottom-6 left-6 z-10">
+            <p class="font-body text-[10px] tracking-[0.5em] uppercase text-gold/70">Founder & CEO</p>
+            <p class="font-headline text-3xl text-champagne tracking-wider mt-1">ROSE</p>
+          </div>
+
+        </div>
+
+        <!-- Floating badge -->
+        <div class="absolute -right-4 top-16 bg-gold px-5 py-4 z-20 shadow-xl">
+          <p class="font-body text-[9px] tracking-[0.3em] uppercase text-obsidian/60">Est.</p>
+          <p class="font-headline text-3xl text-obsidian tracking-wider">2019</p>
+        </div>
+
+        <!-- Floating verified badge -->
+        <div class="absolute -left-4 bottom-20 bg-charcoal border border-gold/20 px-5 py-4 z-20 shadow-xl">
+          <div class="flex items-center gap-2">
+            <i class="fas fa-check-circle text-gold text-sm"></i>
+            <div>
+              <p class="font-body text-[9px] tracking-[0.3em] uppercase text-gold/60">Verified</p>
+              <p class="font-body text-xs text-champagne/70 mt-0.5">Premium Vendor</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right: Write Up -->
+      <div class="flex flex-col gap-7">
+
+        <!-- Name & Title -->
+        <div class="flex flex-col gap-2">
+          <h3 class="font-headline text-4xl md:text-5xl text-champagne tracking-wider leading-tight">
+            ROSE <br/>
+            <span class="gold-shimmer">FASHION</span>
+          </h3>
+          <div class="flex items-center gap-3 mt-2">
+            <div class="w-6 h-px bg-gold/40"></div>
+            <span class="font-body text-[10px] tracking-[0.4em] uppercase text-gold/60">Founder & CEO, Rose-fashion-accessories</span>
+          </div>
+        </div>
+
+        <!-- Divider -->
+        <div class="w-16 h-px bg-gold/30"></div>
+
+        <!--
+          =============================================
+          👇 REPLACE THIS WITH ROSE'S REAL WRITE UP
+          =============================================
+        -->
+        <p class="font-body text-sm text-silk/60 leading-relaxed tracking-wide">
+          ROSE FASHION is the visionary founder and CEO of Rose-fashion-accessories —
+          Lagos' most trusted premium lifestyle store. With a deep passion for
+          fashion, elegance, and African excellence, she built Rose-fashion-accessories
+          from the ground up with one mission: to make luxury accessible to
+          every African.
+        </p>
+
+        <p class="font-body text-sm text-silk/60 leading-relaxed tracking-wide">
+          Since 2019, ROSE has curated hundreds of premium jewelry pieces,
+          designer bags, luxury watches, and statement shades — handpicking
+          every single item to ensure her clients receive nothing but the best.
+          Her attention to detail, commitment to authenticity, and warm
+          customer service have earned Rose-fashion-accessories a loyal community of
+          1,000+ satisfied clients across Nigeria.
+        </p>
+
+        <!-- Signature Quote -->
+        <div class="border-l-2 border-gold/40 pl-5 py-1">
+          <p class="font-display italic text-lg text-gold/80 leading-relaxed">
+            "I started Rose-fashion-accessories because I believed every African deserves 
+            to look and feel premium — without compromise."
+          </p>
+          <p class="font-body text-[10px] tracking-[0.3em] uppercase text-champagne/30 mt-3">— ROSE FASHION</p>
+        </div>
+
+        <!-- Personal Stats -->
+        <div class="grid grid-cols-3 gap-4 mt-2">
+          <div class="flex flex-col items-center text-center p-4 bg-charcoal border border-white/5 hover:border-gold/20 transition-all duration-300">
+            <p class="font-headline text-3xl text-gold tracking-wider">6+</p>
+            <p class="font-body text-[9px] tracking-[0.3em] uppercase text-champagne/30 mt-1">Years Active</p>
+          </div>
+          <div class="flex flex-col items-center text-center p-4 bg-charcoal border border-white/5 hover:border-gold/20 transition-all duration-300">
+            <p class="font-headline text-3xl text-gold tracking-wider">1K+</p>
+            <p class="font-body text-[9px] tracking-[0.3em] uppercase text-champagne/30 mt-1">Clients Served</p>
+          </div>
+          <div class="flex flex-col items-center text-center p-4 bg-charcoal border border-white/5 hover:border-gold/20 transition-all duration-300">
+            <p class="font-headline text-3xl text-gold tracking-wider">5★</p>
+            <p class="font-body text-[9px] tracking-[0.3em] uppercase text-champagne/30 mt-1">Rated</p>
+          </div>
+        </div>
+
+        <!-- Social + CTA -->
+        <div class="flex flex-wrap items-center gap-4 mt-2">
+          <a href="https://wa.me/9998105093592" target="_blank"
+            class="flex items-center gap-2 font-body text-[10px] tracking-[0.3em] uppercase px-6 py-3 bg-gold text-obsidian hover:bg-amber transition-all duration-300 shadow-lg shadow-gold/20">
+            <i class="fab fa-whatsapp"></i> Chat ROSE
+          </a>
+          <a href="https://instagram.com/Roseafrica" target="_blank"
+            class="flex items-center gap-2 font-body text-[10px] tracking-[0.3em] uppercase px-6 py-3 border border-pink-500/30 text-pink-400 hover:bg-pink-500/10 transition-all duration-300">
+            <i class="fab fa-instagram"></i> Follow on IG
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="absolute bottom-0 left-0 gold-line"></div>
+</section>
+
+
+
+<!-- ========== TESTIMONIALS SECTION ========== -->
+<section id="testimonials" class="relative py-24 md:py-36 bg-obsidian overflow-hidden">
+
+  <!-- Decorative elements -->
+  <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_#D4AF3710_0%,_transparent_55%)]"></div>
+  <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_#C8922A08_0%,_transparent_55%)]"></div>
+  <div class="absolute top-0 left-0 gold-line"></div>
+
+  <!-- Big decorative background text -->
+  <div class="absolute bottom-0 left-1/2 -translate-x-1/2 font-headline text-[100px] md:text-[180px] text-white/[0.02] whitespace-nowrap select-none pointer-events-none leading-none tracking-widest">
+    REVIEWS
+  </div>
+
+  <!-- Decorative grid -->
+  <div class="absolute inset-0 opacity-[0.015]"
+    style="background-image: linear-gradient(#D4AF37 1px, transparent 1px), linear-gradient(90deg, #D4AF37 1px, transparent 1px);
+           background-size: 60px 60px;">
+  </div>
+
+  <div class="max-w-7xl mx-auto px-6 md:px-16">
+
+    <!-- Section Header -->
+    <div class="flex flex-col items-center text-center gap-4 mb-16">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-px bg-gold"></div>
+        <span class="font-body text-[10px] tracking-[0.5em] uppercase text-gold/70">Client Stories</span>
+        <div class="w-10 h-px bg-gold"></div>
+      </div>
+      <h2 class="font-headline text-6xl md:text-8xl text-champagne tracking-wider leading-none">
+        WHAT THEY <span class="gold-shimmer">SAY</span>
+      </h2>
+      <p class="font-display italic text-silk/50 max-w-xl leading-relaxed text-lg">
+        Over 1,000 satisfied customers across Nigeria. 
+        Here are a few of their stories.
+      </p>
+
+      <!-- Overall rating bar -->
+      <div class="flex flex-wrap items-center justify-center gap-6 mt-4 px-8 py-5 border border-gold/15 bg-charcoal/50">
+        <div class="flex flex-col items-center">
+          <span class="font-headline text-5xl text-gold tracking-wider">5.0</span>
+          <div class="flex gap-1 mt-1">
+            <i class="fas fa-star text-gold text-xs"></i>
+            <i class="fas fa-star text-gold text-xs"></i>
+            <i class="fas fa-star text-gold text-xs"></i>
+            <i class="fas fa-star text-gold text-xs"></i>
+            <i class="fas fa-star text-gold text-xs"></i>
+          </div>
+          <span class="font-body text-[10px] tracking-[0.3em] uppercase text-champagne/30 mt-1">Overall</span>
+        </div>
+        <div class="w-px h-14 bg-gold/15 hidden sm:block"></div>
+        <div class="flex flex-col gap-2">
+          <div class="flex items-center gap-3">
+            <span class="font-body text-[10px] text-champagne/30 w-3">5</span>
+            <div class="w-32 h-1 bg-white/5 overflow-hidden">
+              <div class="h-full bg-gold" style="width:90%"></div>
+            </div>
+            <span class="font-body text-[10px] text-champagne/30">90%</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="font-body text-[10px] text-champagne/30 w-3">4</span>
+            <div class="w-32 h-1 bg-white/5 overflow-hidden">
+              <div class="h-full bg-gold/60" style="width:8%"></div>
+            </div>
+            <span class="font-body text-[10px] text-champagne/30">8%</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="font-body text-[10px] text-champagne/30 w-3">3</span>
+            <div class="w-32 h-1 bg-white/5 overflow-hidden">
+              <div class="h-full bg-gold/30" style="width:2%"></div>
+            </div>
+            <span class="font-body text-[10px] text-champagne/30">2%</span>
+          </div>
+        </div>
+        <div class="w-px h-14 bg-gold/15 hidden sm:block"></div>
+        <div class="flex flex-col items-center">
+          <span class="font-headline text-4xl text-champagne tracking-wider">1K+</span>
+          <span class="font-body text-[10px] tracking-[0.3em] uppercase text-champagne/30 mt-1">Reviews</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Testimonials Slider -->
+    <div class="relative overflow-hidden">
+
+      <!-- Slides Wrapper -->
+      <div class="flex transition-transform duration-700 ease-in-out" id="tslides-wrapper">
+
+        <!-- Slide 1 -->
+        <div class="min-w-full grid grid-cols-1 md:grid-cols-3 gap-5">
+
+          <!-- Card 1 -->
+          <div class="relative bg-charcoal border border-white/5 p-7 hover:border-gold/25 transition-all duration-500 group">
+            <div class="absolute top-0 left-0 w-0 h-0.5 bg-gold group-hover:w-full transition-all duration-500"></div>
+            <div class="absolute top-5 right-6 font-headline text-7xl text-gold/8 leading-none select-none">"</div>
+
+            <!-- Stars -->
+            <div class="flex gap-1 mb-5">
+              <i class="fas fa-star text-gold text-xs"></i>
+              <i class="fas fa-star text-gold text-xs"></i>
+              <i class="fas fa-star text-gold text-xs"></i>
+              <i class="fas fa-star text-gold text-xs"></i>
+              <i class="fas fa-star text-gold text-xs"></i>
+            </div>
+
+            <p class="font-body text-sm text-silk/60 leading-relaxed mb-6 italic">
+              "I ordered a gold necklace from Rose-fashion-accessories and I was blown away. 
+              The quality is absolutely premium — exactly what was shown. 
+              Delivery to Abuja was super fast too. 10/10!"
+            </p>
+
+            <div class="flex items-center gap-3 pt-5 border-t border-white/5">
+              <div class="w-10 h-10 border border-gold/20 flex items-center justify-center bg-gold/10">
+                <span class="font-headline text-gold text-lg">A</span>
+              </div>
+              <div>
+                <p class="font-body text-sm text-champagne/80">Adaeze Okafor</p>
+                <p class="font-body text-[10px] text-silk/30 tracking-wide">Abuja, Nigeria</p>
+              </div>
+              <div class="ml-auto">
+                <span class="font-body text-[9px] tracking-widest uppercase text-gold/50 border border-gold/15 px-2 py-1">Jewelry</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 — Featured -->
+          <div class="relative bg-gold/8 border border-gold/25 p-7 hover:border-gold/50 transition-all duration-500 group">
+            <div class="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-amber via-gold to-champagne"></div>
+            <div class="absolute top-5 right-6 font-headline text-7xl text-gold/15 leading-none select-none">"</div>
+
+            <div class="flex gap-1 mb-5">
+              <i class="fas fa-star text-gold text-xs"></i>
+              <i class="fas fa-star text-gold text-xs"></i>
+              <i class="fas fa-star text-gold text-xs"></i>
+              <i class="fas fa-star text-gold text-xs"></i>
+              <i class="fas fa-star text-gold text-xs"></i>
+            </div>
+
+            <p class="font-body text-sm text-silk/70 leading-relaxed mb-6 italic">
+              "The executive watch I got is absolutely stunning. My colleagues 
+              keep asking where I bought it. Rose-fashion-accessories is the real deal — 
+              authentic, premium, and worth every kobo. My go-to store!"
+            </p>
+
+            <div class="flex items-center gap-3 pt-5 border-t border-gold/15">
+              <div class="w-10 h-10 border border-gold/30 flex items-center justify-center bg-gold/20">
+                <span class="font-headline text-gold text-lg">E</span>
+              </div>
+              <div>
+                <p class="font-body text-sm text-champagne/80">Emeka Nwosu</p>
+                <p class="font-body text-[10px] text-silk/30 tracking-wide">Lagos, Nigeria</p>
+              </div>
+              <div class="ml-auto">
+                <span class="font-body text-[9px] tracking-widest uppercase text-gold border border-gold/30 px-2 py-1">Watches</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="relative bg-charcoal border border-white/5 p-7 hover:border-gold/25 transition-all duration-500 group">
+            <div class="absolute top-0 left-0 w-0 h-0.5 bg-gold group-hover:w-full transition-all duration-500"></div>
+            <div class="absolute top-5 right-6 font-headline text-7xl text-gold/8 leading-none select-none">"</div>
+
+            <div class="flex gap-1 mb-5">
+              <i class="fas fa-star text-gold text-xs"></i>
+              <i class="fas fa-star text-gold text-xs"></i>
+              <i class="fas fa-star text-gold text-xs"></i>
+              <i class="fas fa-star text-gold text-xs"></i>
+              <i class="fas fa-star text-gold text-xs"></i>
+            </div>
+
+            <p class="font-body text-sm text-silk/60 leading-relaxed mb-6 italic">
+              "Got the luxury tote bag as a gift for my wife and she absolutely 
+              loves it! The packaging was beautiful and the bag quality exceeded 
+              expectations. Will definitely order again from Rose!"
+            </p>
+
+            <div class="flex items-center gap-3 pt-5 border-t border-white/5">
+              <div class="w-10 h-10 border border-gold/20 flex items-center justify-center bg-gold/10">
+                <span class="font-headline text-gold text-lg">T</span>
+              </div>
+              <div>
+                <p class="font-body text-sm text-champagne/80">Tunde Adeleke</p>
+                <p class="font-body text-[10px] text-silk/30 tracking-wide">Lagos, Nigeria</p>
+              </div>
+              <div class="ml-auto">
+                <span class="font-body text-[9px] tracking-widest uppercase text-gold/50 border border-gold/15 px-2 py-1">Bags</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="min-w-full grid grid-cols-1 md:grid-cols-3 gap-5">
+
+          <!-- Card 4 -->
+          <div class="relative bg-charcoal border border-white/5 p-7 hover:border-gold/25 transition-all duration-500 group">
+            <div class="absolute top-0 left-0 w-0 h-0.5 bg-gold group-hover:w-full transition-all duration-500"></div>
+            <div class="absolute top-5 right-6 font-headline text-7xl text-gold/8 leading-none select-none">"</div>
+
+            <div class="flex gap-1 mb-5">
+              <i class="fas fa-star text-gold text-xs"></i>
+              <i class="fas fa-star text-gold text-xs"></i>
+              <i class="fas fa-star text-gold text-xs"></i>
+              <i class="fas fa-star text-gold text-xs"></i>
+              <i class="fas fa-star text-gold text-xs"></i>
+            </div>
+
+            <p class="font-body text-sm text-silk/60 leading-relaxed mb-6 italic">
+              "The oversized sunglasses are everything! Perfect fit, perfect 
+              quality and the UV protection is real. I've gotten so many 
+              compliments. Rose-fashion-accessories never disappoints!"
+            </p>
+
+            <div class="flex items-center gap-3 pt-5 border-t border-white/5">
+              <div class="w-10 h-10 border border-gold/20 flex items-center justify-center bg-gold/10">
+                <span class="font-headline text-gold text-lg">F</span>
+              </div>
+              <div>
+                <p class="font-body text-sm text-champagne/80">Fatima Aliyu</p>
+                <p class="font-body text-[10px] text-silk/30 tracking-wide">Kano, Nigeria</p>
+              </div>
+              <div class="ml-auto">
+                <span class="font-body text-[9px] tracking-widest uppercase text-gold/50 border border-gold/15 px-2 py-1">Shades</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 5 — Featured -->
+          <div class="relative bg-gold/8 border border-gold/25 p-7 hover:border-gold/50 transition-all duration-500 group">
+            <div class="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-amber via-gold to-champagne"></div>
+            <div class="absolute top-5 right-6 font-headline text-7xl text-gold/15 leading-none select-none">"</div>
+
+            <div class="flex gap-1 mb-5">
+              <i class="fas fa-star text-gold text-xs"></i>
+              <i class="fas fa-star text-gold text-xs"></i>
+              <i class="fas fa-star text-gold text-xs"></i>
+              <i class="fas fa-star text-gold text-xs"></i>
+              <i class="fas fa-star text-gold text-xs"></i>
+            </div>
+
+            <p class="font-body text-sm text-silk/70 leading-relaxed mb-6 italic">
+              "I've ordered 3 times from Rose-fashion-accessories — jewelry, a bag and 
+              shades. Every single time the quality has been top tier. 
+              Customer service is amazing and delivery is always on time!"
+            </p>
+
+            <div class="flex items-center gap-3 pt-5 border-t border-gold/15">
+              <div class="w-10 h-10 border border-gold/30 flex items-center justify-center bg-gold/20">
+                <span class="font-headline text-gold text-lg">C</span>
+              </div>
+              <div>
+                <p class="font-body text-sm text-champagne/80">Chidinma Eze</p>
+                <p class="font-body text-[10px] text-silk/30 tracking-wide">Port Harcourt, Nigeria</p>
+              </div>
+              <div class="ml-auto">
+                <span class="font-body text-[9px] tracking-widest uppercase text-gold border border-gold/30 px-2 py-1">Multiple</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="relative bg-charcoal border border-white/5 p-7 hover:border-gold/25 transition-all duration-500 group">
+            <div class="absolute top-0 left-0 w-0 h-0.5 bg-gold group-hover:w-full transition-all duration-500"></div>
+            <div class="absolute top-5 right-6 font-headline text-7xl text-gold/8 leading-none select-none">"</div>
+
+            <div class="flex gap-1 mb-5">
+              <i class="fas fa-star text-gold text-xs"></i>
+              <i class="fas fa-star text-gold text-xs"></i>
+              <i class="fas fa-star text-gold text-xs"></i>
+              <i class="fas fa-star text-gold text-xs"></i>
+              <i class="fas fa-star text-gold text-xs"></i>
+            </div>
+
+            <p class="font-body text-sm text-silk/60 leading-relaxed mb-6 italic">
+              "The men's steel bracelet is 🔥! Solid, heavy and looks super 
+              expensive. Got it delivered to Ibadan in just 2 days. 
+              Rose-fashion-accessories is officially my favourite online store in Nigeria!"
+            </p>
+
+            <div class="flex items-center gap-3 pt-5 border-t border-white/5">
+              <div class="w-10 h-10 border border-gold/20 flex items-center justify-center bg-gold/10">
+                <span class="font-headline text-gold text-lg">K</span>
+              </div>
+              <div>
+                <p class="font-body text-sm text-champagne/80">Kunle Oladele</p>
+                <p class="font-body text-[10px] text-silk/30 tracking-wide">Ibadan, Nigeria</p>
+              </div>
+              <div class="ml-auto">
+                <span class="font-body text-[9px] tracking-widest uppercase text-gold/50 border border-gold/15 px-2 py-1">Jewelry</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="min-w-full grid grid-cols-1 md:grid-cols-3 gap-5">
+
+          <!-- Card 7 -->
+          <div class="relative bg-charcoal border border-white/5 p-7 hover:border-gold/25 transition-all duration-500 group">
+            <div class="absolute top-0 left-0 w-0 h-0.5 bg-gold group-hover:w-full transition-all duration-500"></div>
+            <div class="absolute top-5 right-6 font-headline text-7xl text-gold/8 leading-none select-none">"</div>
+
+            <div class="flex gap-1 mb-5">
+              <i class="fas fa-star text-gold text-xs"></i>
+              <i class="fas fa-star text-gold text-xs"></i>
+              <i class="fas fa-star text-gold text-xs"></i>
+              <i class="fas fa-star text-gold text-xs"></i>
+              <i class="fas fa-star text-gold text-xs"></i>
+            </div>
+
+            <p class="font-body text-sm text-silk/60 leading-relaxed mb-6 italic">
+              "The rose gold ladies watch is the most beautiful thing I own. 
+              I wore it to an event and everyone wanted to know where I got it. 
+              Rose-fashion-accessories is truly premium. No cap!"
+            </p>
+
+            <div class="flex items-center gap-3 pt-5 border-t border-white/5">
+              <div class="w-10 h-10 border border-gold/20 flex items-center justify-center bg-gold/10">
+                <span class="font-headline text-gold text-lg">N</span>
+              </div>
+              <div>
+                <p class="font-body text-sm text-champagne/80">Ngozi Obi</p>
+                <p class="font-body text-[10px] text-silk/30 tracking-wide">Enugu, Nigeria</p>
+              </div>
+              <div class="ml-auto">
+                <span class="font-body text-[9px] tracking-widest uppercase text-gold/50 border border-gold/15 px-2 py-1">Watches</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 8 — Featured -->
+          <div class="relative bg-gold/8 border border-gold/25 p-7 hover:border-gold/50 transition-all duration-500 group">
+            <div class="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-amber via-gold to-champagne"></div>
+            <div class="absolute top-5 right-6 font-headline text-7xl text-gold/15 leading-none select-none">"</div>
+
+            <div class="flex gap-1 mb-5">
+              <i class="fas fa-star text-gold text-xs"></i>
+              <i class="fas fa-star text-gold text-xs"></i>
+              <i class="fas fa-star text-gold text-xs"></i>
+              <i class="fas fa-star text-gold text-xs"></i>
+              <i class="fas fa-star text-gold text-xs"></i>
+            </div>
+
+            <p class="font-body text-sm text-silk/70 leading-relaxed mb-6 italic">
+              "Ordered a premium backpack for my husband and he couldn't 
+              believe the quality. Looks exactly like the pictures and 
+              feels even better in person. Rose-fashion-accessories is the truth!"
+            </p>
+
+            <div class="flex items-center gap-3 pt-5 border-t border-gold/15">
+              <div class="w-10 h-10 border border-gold/30 flex items-center justify-center bg-gold/20">
+                <span class="font-headline text-gold text-lg">B</span>
+              </div>
+              <div>
+                <p class="font-body text-sm text-champagne/80">Blessing Uchenna</p>
+                <p class="font-body text-[10px] text-silk/30 tracking-wide">Lagos, Nigeria</p>
+              </div>
+              <div class="ml-auto">
+                <span class="font-body text-[9px] tracking-widest uppercase text-gold border border-gold/30 px-2 py-1">Bags</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 9 -->
+          <div class="relative bg-charcoal border border-white/5 p-7 hover:border-gold/25 transition-all duration-500 group">
+            <div class="absolute top-0 left-0 w-0 h-0.5 bg-gold group-hover:w-full transition-all duration-500"></div>
+            <div class="absolute top-5 right-6 font-headline text-7xl text-gold/8 leading-none select-none">"</div>
+
+            <div class="flex gap-1 mb-5">
+              <i class="fas fa-star text-gold text-xs"></i>
+              <i class="fas fa-star text-gold text-xs"></i>
+              <i class="fas fa-star text-gold text-xs"></i>
+              <i class="fas fa-star text-gold text-xs"></i>
+              <i class="fas fa-star text-gold text-xs"></i>
+            </div>
+
+            <p class="font-body text-sm text-silk/60 leading-relaxed mb-6 italic">
+              "The aviator sunglasses are so clean bro. The gold frame is 
+              everything. Wore it to a wedding and people thought I spent 
+              a fortune. Rose-fashion-accessories gives you luxury for less!"
+            </p>
+
+            <div class="flex items-center gap-3 pt-5 border-t border-white/5">
+              <div class="w-10 h-10 border border-gold/20 flex items-center justify-center bg-gold/10">
+                <span class="font-headline text-gold text-lg">D</span>
+              </div>
+              <div>
+                <p class="font-body text-sm text-champagne/80">David Okonkwo</p>
+                <p class="font-body text-[10px] text-silk/30 tracking-wide">Delta, Nigeria</p>
+              </div>
+              <div class="ml-auto">
+                <span class="font-body text-[9px] tracking-widest uppercase text-gold/50 border border-gold/15 px-2 py-1">Shades</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Slider Controls -->
+      <div class="flex items-center justify-center gap-6 mt-10">
+        <button onclick="tPrevSlide()"
+          class="w-12 h-12 border border-gold/20 text-gold hover:bg-gold hover:text-obsidian transition-all duration-300 flex items-center justify-center group">
+          <i class="fas fa-arrow-left text-sm"></i>
+        </button>
+
+        <!-- Dots -->
+        <div class="flex gap-2" id="tdots">
+          <button onclick="tGoTo(0)" class="tdot w-8 h-0.5 bg-gold transition-all duration-300"></button>
+          <button onclick="tGoTo(1)" class="tdot w-4 h-0.5 bg-white/15 transition-all duration-300"></button>
+          <button onclick="tGoTo(2)" class="tdot w-4 h-0.5 bg-white/15 transition-all duration-300"></button>
+        </div>
+
+        <button onclick="tNextSlide()"
+          class="w-12 h-12 border border-gold/20 text-gold hover:bg-gold hover:text-obsidian transition-all duration-300 flex items-center justify-center group">
+          <i class="fas fa-arrow-right text-sm"></i>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Bottom CTA -->
+    <div class="mt-16 flex flex-col items-center gap-4 text-center">
+      <p class="font-body text-[10px] tracking-[0.4em] uppercase text-champagne/20">
+        Join 1,000+ satisfied customers across Nigeria
+      </p>
+      <a href="#order"
+        class="font-body text-[10px] tracking-[0.3em] uppercase px-10 py-4 bg-gold text-obsidian hover:bg-amber transition-all duration-300 shadow-lg shadow-gold/20">
+        Shop & Order Now
+      </a>
+    </div>
+
+  </div>
+
+  <div class="absolute bottom-0 left-0 gold-line"></div>
+</section>
+
+<!-- ========== LOOKBOOK / GALLERY SECTION ========== -->
+<section id="lookbook" class="relative py-24 md:py-36 bg-charcoal overflow-hidden">
+
+  <!-- Decorative elements -->
+  <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_#D4AF3708_0%,_transparent_60%)]"></div>
+  <div class="absolute top-0 left-0 gold-line"></div>
+
+  <!-- Big decorative background text -->
+  <div class="absolute top-10 right-0 font-headline text-[120px] md:text-[180px] text-white/[0.02] whitespace-nowrap select-none pointer-events-none leading-none tracking-widest">
+    LOOKBOOK
+  </div>
+
+  <div class="max-w-7xl mx-auto px-6 md:px-16">
+
+    <!-- Section Header -->
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
+      <div class="flex flex-col gap-4">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-px bg-gold"></div>
+          <span class="font-body text-[10px] tracking-[0.5em] uppercase text-gold/70">Visual Stories</span>
+        </div>
+        <h2 class="font-headline text-6xl md:text-8xl text-champagne tracking-wider leading-none">
+          THE <span class="gold-shimmer">LOOKBOOK</span>
+        </h2>
+        <p class="font-display italic text-silk/50 max-w-md leading-relaxed">
+          Style captured. Moments elevated. 
+          A visual journey through the Rose-fashion-accessories world.
+        </p>
+      </div>
+
+      <!-- Gallery Filter -->
+      <div class="flex flex-wrap gap-2">
+        <button onclick="filterLook('all')" data-lf="all"
+          class="lfilter-btn font-body text-[10px] tracking-[0.3em] uppercase px-5 py-2.5 bg-gold text-obsidian border border-gold transition-all duration-300">
+          All
+        </button>
+        <button onclick="filterLook('jewelry')" data-lf="jewelry"
+          class="lfilter-btn font-body text-[10px] tracking-[0.3em] uppercase px-5 py-2.5 border border-champagne/10 text-champagne/40 hover:border-gold hover:text-gold transition-all duration-300">
+          Jewelry
+        </button>
+        <button onclick="filterLook('bags')" data-lf="bags"
+          class="lfilter-btn font-body text-[10px] tracking-[0.3em] uppercase px-5 py-2.5 border border-champagne/10 text-champagne/40 hover:border-gold hover:text-gold transition-all duration-300">
+          Bags
+        </button>
+        <button onclick="filterLook('watches')" data-lf="watches"
+          class="lfilter-btn font-body text-[10px] tracking-[0.3em] uppercase px-5 py-2.5 border border-champagne/10 text-champagne/40 hover:border-gold hover:text-gold transition-all duration-300">
+          Watches
+        </button>
+        <button onclick="filterLook('shades')" data-lf="shades"
+          class="lfilter-btn font-body text-[10px] tracking-[0.3em] uppercase px-5 py-2.5 border border-champagne/10 text-champagne/40 hover:border-gold hover:text-gold transition-all duration-300">
+          Shades
+        </button>
+      </div>
+    </div>
+
+    <!-- Masonry Grid -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 auto-rows-auto" id="lookbook-grid">
+
+      <!-- Item 1 - Tall -->
+      <div class="look-item group relative overflow-hidden row-span-2 cursor-pointer" data-lcat="jewelry"
+        onclick="openLook(this)">
+        <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&q=80"
+          alt="Gold Jewelry"
+          class="w-full h-full object-cover min-h-[300px] group-hover:scale-110 transition-transform duration-700"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-obsidian/90 via-obsidian/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+        <!-- Corner accents on hover -->
+        <div class="absolute top-3 left-3 w-5 h-5 border-t border-l border-gold/0 group-hover:border-gold transition-all duration-500"></div>
+        <div class="absolute top-3 right-3 w-5 h-5 border-t border-r border-gold/0 group-hover:border-gold transition-all duration-500"></div>
+        <div class="absolute bottom-3 left-3 w-5 h-5 border-b border-l border-gold/0 group-hover:border-gold transition-all duration-500"></div>
+        <div class="absolute bottom-3 right-3 w-5 h-5 border-b border-r border-gold/0 group-hover:border-gold transition-all duration-500"></div>
+
+        <div class="absolute bottom-4 left-4 right-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+          <span class="font-body text-[9px] tracking-widest uppercase text-gold border border-gold/30 px-2 py-1">Jewelry</span>
+          <p class="font-headline text-xl text-champagne tracking-wider mt-2">Gold Series</p>
+        </div>
+        <div class="absolute top-3 right-3 w-8 h-8 bg-gold flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
+          <i class="fas fa-expand text-obsidian text-xs"></i>
+        </div>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="look-item group relative overflow-hidden cursor-pointer" data-lcat="bags"
+        onclick="openLook(this)">
+        <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=400&q=80"
+          alt="Luxury Bag"
+          class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-700"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-obsidian/90 via-obsidian/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <div class="absolute top-3 left-3 w-5 h-5 border-t border-l border-gold/0 group-hover:border-gold transition-all duration-500"></div>
+        <div class="absolute top-3 right-3 w-5 h-5 border-t border-r border-gold/0 group-hover:border-gold transition-all duration-500"></div>
+        <div class="absolute bottom-3 left-3 w-5 h-5 border-b border-l border-gold/0 group-hover:border-gold transition-all duration-500"></div>
+        <div class="absolute bottom-3 right-3 w-5 h-5 border-b border-r border-gold/0 group-hover:border-gold transition-all duration-500"></div>
+        <div class="absolute bottom-4 left-4 right-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+          <span class="font-body text-[9px] tracking-widest uppercase text-gold border border-gold/30 px-2 py-1">Bags</span>
+          <p class="font-headline text-xl text-champagne tracking-wider mt-2">Luxury Tote</p>
+        </div>
+        <div class="absolute top-3 right-3 w-8 h-8 bg-gold flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
+          <i class="fas fa-expand text-obsidian text-xs"></i>
+        </div>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="look-item group relative overflow-hidden cursor-pointer" data-lcat="watches"
+        onclick="openLook(this)">
+        <img src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49?w=400&q=80"
+          alt="Luxury Watch"
+          class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-700"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-obsidian/90 via-obsidian/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <div class="absolute top-3 left-3 w-5 h-5 border-t border-l border-gold/0 group-hover:border-gold transition-all duration-500"></div>
+        <div class="absolute top-3 right-3 w-5 h-5 border-t border-r border-gold/0 group-hover:border-gold transition-all duration-500"></div>
+        <div class="absolute bottom-3 left-3 w-5 h-5 border-b border-l border-gold/0 group-hover:border-gold transition-all duration-500"></div>
+        <div class="absolute bottom-3 right-3 w-5 h-5 border-b border-r border-gold/0 group-hover:border-gold transition-all duration-500"></div>
+        <div class="absolute bottom-4 left-4 right-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+          <span class="font-body text-[9px] tracking-widests uppercase text-gold border border-gold/30 px-2 py-1">Watches</span>
+          <p class="font-headline text-xl text-champagne tracking-wider mt-2">Executive</p>
+        </div>
+        <div class="absolute top-3 right-3 w-8 h-8 bg-gold flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
+          <i class="fas fa-expand text-obsidian text-xs"></i>
+        </div>
+      </div>
+
+      <!-- Item 4 - Tall -->
+      <div class="look-item group relative overflow-hidden row-span-2 cursor-pointer" data-lcat="shades"
+        onclick="openLook(this)">
+        <img src="gla.png"
+          alt="Designer Shades"
+          class="w-full h-full object-cover min-h-[300px] group-hover:scale-110 transition-transform duration-700"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-obsidian/90 via-obsidian/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <div class="absolute top-3 left-3 w-5 h-5 border-t border-l border-gold/0 group-hover:border-gold transition-all duration-500"></div>
+        <div class="absolute top-3 right-3 w-5 h-5 border-t border-r border-gold/0 group-hover:border-gold transition-all duration-500"></div>
+        <div class="absolute bottom-3 left-3 w-5 h-5 border-b border-l border-gold/0 group-hover:border-gold transition-all duration-500"></div>
+        <div class="absolute bottom-3 right-3 w-5 h-5 border-b border-r border-gold/0 group-hover:border-gold transition-all duration-500"></div>
+        <div class="absolute bottom-4 left-4 right-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+          <span class="font-body text-[9px] tracking-widests uppercase text-gold border border-gold/30 px-2 py-1">Shades</span>
+          <p class="font-headline text-xl text-champagne tracking-wider mt-2">Designer Eye</p>
+        </div>
+        <div class="absolute top-3 right-3 w-8 h-8 bg-gold flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
+          <i class="fas fa-expand text-obsidian text-xs"></i>
+        </div>
+      </div>
+
+      <!-- Item 5 -->
+      <div class="look-item group relative overflow-hidden cursor-pointer" data-lcat="jewelry"
+        onclick="openLook(this)">
+        <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=400&q=80"
+          alt="Men Bracelet"
+          class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-700"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-obsidian/90 via-obsidian/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <div class="absolute top-3 left-3 w-5 h-5 border-t border-l border-gold/0 group-hover:border-gold transition-all duration-500"></div>
+        <div class="absolute top-3 right-3 w-5 h-5 border-t border-r border-gold/0 group-hover:border-gold transition-all duration-500"></div>
+        <div class="absolute bottom-3 left-3 w-5 h-5 border-b border-l border-gold/0 group-hover:border-gold transition-all duration-500"></div>
+        <div class="absolute bottom-3 right-3 w-5 h-5 border-b border-r border-gold/0 group-hover:border-gold transition-all duration-500"></div>
+        <div class="absolute bottom-4 left-4 right-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+          <span class="font-body text-[9px] tracking-widests uppercase text-gold border border-gold/30 px-2 py-1">Jewelry</span>
+          <p class="font-headline text-xl text-champagne tracking-wider mt-2">Steel Bracelet</p>
+        </div>
+        <div class="absolute top-3 right-3 w-8 h-8 bg-gold flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
+          <i class="fas fa-expand text-obsidian text-xs"></i>
+        </div>
+      </div>
+
+      <!-- Item 6 -->
+      <div class="look-item group relative overflow-hidden cursor-pointer" data-lcat="bags"
+        onclick="openLook(this)">
+        <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&q=80"
+          alt="Men Backpack"
+          class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-700"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-obsidian/90 via-obsidian/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <div class="absolute top-3 left-3 w-5 h-5 border-t border-l border-gold/0 group-hover:border-gold transition-all duration-500"></div>
+        <div class="absolute top-3 right-3 w-5 h-5 border-t border-r border-gold/0 group-hover:border-gold transition-all duration-500"></div>
+        <div class="absolute bottom-3 left-3 w-5 h-5 border-b border-l border-gold/0 group-hover:border-gold transition-all duration-500"></div>
+        <div class="absolute bottom-3 right-3 w-5 h-5 border-b border-r border-gold/0 group-hover:border-gold transition-all duration-500"></div>
+        <div class="absolute bottom-4 left-4 right-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+          <span class="font-body text-[9px] tracking-widests uppercase text-gold border border-gold/30 px-2 py-1">Bags</span>
+          <p class="font-headline text-xl text-champagne tracking-wider mt-2">Premium Pack</p>
+        </div>
+        <div class="absolute top-3 right-3 w-8 h-8 bg-gold flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
+          <i class="fas fa-expand text-obsidian text-xs"></i>
+        </div>
+      </div>
+
+      <!-- Item 7 - Wide -->
+      <div class="look-item group relative overflow-hidden col-span-2 cursor-pointer" data-lcat="watches"
+        onclick="openLook(this)">
+        <img src="https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?w=800&q=80"
+          alt="Ladies Watch"
+          class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-700"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-obsidian/90 via-obsidian/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <div class="absolute top-3 left-3 w-5 h-5 border-t border-l border-gold/0 group-hover:border-gold transition-all duration-500"></div>
+        <div class="absolute top-3 right-3 w-5 h-5 border-t border-r border-gold/0 group-hover:border-gold transition-all duration-500"></div>
+        <div class="absolute bottom-3 left-3 w-5 h-5 border-b border-l border-gold/0 group-hover:border-gold transition-all duration-500"></div>
+        <div class="absolute bottom-3 right-3 w-5 h-5 border-b border-r border-gold/0 group-hover:border-gold transition-all duration-500"></div>
+        <div class="absolute bottom-4 left-4 right-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+          <span class="font-body text-[9px] tracking-widests uppercase text-gold border border-gold/30 px-2 py-1">Watches</span>
+          <p class="font-headline text-2xl text-champagne tracking-wider mt-2">Rose Gold Ladies Collection</p>
+        </div>
+        <div class="absolute top-3 right-3 w-8 h-8 bg-gold flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
+          <i class="fas fa-expand text-obsidian text-xs"></i>
+        </div>
+      </div>
+
+      <!-- Item 8 -->
+      <div class="look-item group relative overflow-hidden cursor-pointer" data-lcat="shades"
+        onclick="openLook(this)">
+        <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=400&q=80"
+          alt="Aviator Shades"
+          class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-700"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-obsidian/90 via-obsidian/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <div class="absolute top-3 left-3 w-5 h-5 border-t border-l border-gold/0 group-hover:border-gold transition-all duration-500"></div>
+        <div class="absolute top-3 right-3 w-5 h-5 border-t border-r border-gold/0 group-hover:border-gold transition-all duration-500"></div>
+        <div class="absolute bottom-3 left-3 w-5 h-5 border-b border-l border-gold/0 group-hover:border-gold transition-all duration-500"></div>
+        <div class="absolute bottom-3 right-3 w-5 h-5 border-b border-r border-gold/0 group-hover:border-gold transition-all duration-500"></div>
+        <div class="absolute bottom-4 left-4 right-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+          <span class="font-body text-[9px] tracking-widests uppercase text-gold border border-gold/30 px-2 py-1">Shades</span>
+          <p class="font-headline text-xl text-champagne tracking-wider mt-2">Aviator Gold</p>
+        </div>
+        <div class="absolute top-3 right-3 w-8 h-8 bg-gold flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
+          <i class="fas fa-expand text-obsidian text-xs"></i>
+        </div>
+      </div>
+
+      <!-- Item 9 -->
+      <div class="look-item group relative overflow-hidden cursor-pointer" data-lcat="jewelry"
+        onclick="openLook(this)">
+        <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=400&q=80"
+          alt="Diamond Ring"
+          class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-700"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-obsidian/90 via-obsidian/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <div class="absolute top-3 left-3 w-5 h-5 border-t border-l border-gold/0 group-hover:border-gold transition-all duration-500"></div>
+        <div class="absolute top-3 right-3 w-5 h-5 border-t border-r border-gold/0 group-hover:border-gold transition-all duration-500"></div>
+        <div class="absolute bottom-3 left-3 w-5 h-5 border-b border-l border-gold/0 group-hover:border-gold transition-all duration-500"></div>
+        <div class="absolute bottom-3 right-3 w-5 h-5 border-b border-r border-gold/0 group-hover:border-gold transition-all duration-500"></div>
+        <div class="absolute bottom-4 left-4 right-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+          <span class="font-body text-[9px] tracking-widests uppercase text-gold border border-gold/30 px-2 py-1">Jewelry</span>
+          <p class="font-headline text-xl text-champagne tracking-wider mt-2">Diamond Ring</p>
+        </div>
+        <div class="absolute top-3 right-3 w-8 h-8 bg-gold flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
+          <i class="fas fa-expand text-obsidian text-xs"></i>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom CTA -->
+    <div class="mt-14 flex flex-col items-center gap-4 text-center">
+      <p class="font-body text-[10px] tracking-[0.4em] uppercase text-champagne/20">Like what you see? Order yours today</p>
+      <a href="#order"
+        class="font-body text-[10px] tracking-[0.3em] uppercase px-10 py-4 bg-gold text-obsidian hover:bg-amber transition-all duration-300 shadow-lg shadow-gold/20">
+        Shop The Lookbook
+      </a>
+    </div>
+
+  </div>
+
+  <div class="absolute bottom-0 left-0 gold-line"></div>
+</section>
+
+<!-- Lookbook Lightbox -->
+<div id="look-lightbox" class="fixed inset-0 z-[999] bg-obsidian/97 flex items-center justify-center hidden px-4"
+  onclick="closeLook(event)">
+  <div class="relative max-w-4xl w-full">
+    <button onclick="closeLook()"
+      class="absolute -top-12 right-0 w-10 h-10 border border-gold/20 text-gold hover:bg-gold hover:text-obsidian transition-all duration-300 flex items-center justify-center z-10">
+      <i class="fas fa-times text-sm"></i>
+    </button>
+    <div class="relative">
+      <div class="absolute top-4 left-4 w-6 h-6 border-t-2 border-l-2 border-gold/60"></div>
+      <div class="absolute top-4 right-4 w-6 h-6 border-t-2 border-r-2 border-gold/60"></div>
+      <div class="absolute bottom-4 left-4 w-6 h-6 border-b-2 border-l-2 border-gold/60"></div>
+      <div class="absolute bottom-4 right-4 w-6 h-6 border-b-2 border-r-2 border-gold/60"></div>
+      <img id="look-lightbox-img" src="" alt=""
+        class="w-full max-h-[75vh] object-contain border border-gold/15"/>
+    </div>
+    <div class="flex items-center justify-between mt-4">
+      <p id="look-lightbox-caption" class="font-headline text-2xl text-champagne tracking-wider"></p>
+      <a href="#order"
+        class="font-body text-[10px] tracking-[0.3em] uppercase px-6 py-2.5 bg-gold text-obsidian hover:bg-amber transition-all duration-300">
+        Order This
+      </a>
+    </div>
+  </div>
+</div>
+
+
+<!-- ========== CONTACT SECTION ========== -->
+<section id="contact" class="relative py-24 bg-obsidian overflow-hidden">
+  <div class="absolute top-0 left-0 gold-line"></div>
+  <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_#D4AF3706_0%,_transparent_60%)]"></div>
+
+  <div class="max-w-7xl mx-auto px-6 md:px-16">
+
+    <!-- Header -->
+    <div class="flex flex-col items-center text-center gap-4 mb-16">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-px bg-gold"></div>
+        <span class="font-body text-[10px] tracking-[0.5em] uppercase text-gold/70">Get In Touch</span>
+        <div class="w-10 h-px bg-gold"></div>
+      </div>
+      <h2 class="font-headline text-6xl md:text-8xl text-champagne tracking-wider leading-none">
+        CONTACT <span class="gold-shimmer">US</span>
+      </h2>
+    </div>
+
+    <!-- Contact Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-16">
+
+      <!-- WhatsApp -->
+      <a href="https://wa.me/9998105093592" target="_blank"
+        class="group relative flex flex-col items-center text-center gap-5 p-8 bg-charcoal border border-white/5 hover:border-[#25D366]/30 hover:shadow-xl hover:shadow-[#25D366]/5 transition-all duration-500 hover:-translate-y-1">
+        <div class="absolute top-0 left-0 w-0 h-0.5 bg-[#25D366] group-hover:w-full transition-all duration-500"></div>
+        <div class="w-14 h-14 border border-[#25D366]/20 flex items-center justify-center group-hover:bg-[#25D366]/10 transition-colors duration-300">
+          <i class="fab fa-whatsapp text-[#25D366] text-2xl"></i>
+        </div>
+        <div>
+          <p class="font-body text-[10px] tracking-[0.4em] uppercase text-champagne/30 mb-1">WhatsApp</p>
+          <p class="font-headline text-xl text-champagne tracking-wider">Chat With Us</p>
+          <p class="font-body text-sm text-silk/40 mt-1">0000005093592</p>
+        </div>
+      </a>
+
+      <!-- Email -->
+      <a href="mailto:ROSEFASHION@gmail.com"
+        class="group relative flex flex-col items-center text-center gap-5 p-8 bg-charcoal border border-white/5 hover:border-gold/30 hover:shadow-xl hover:shadow-gold/5 transition-all duration-500 hover:-translate-y-1">
+        <div class="absolute top-0 left-0 w-0 h-0.5 bg-gold group-hover:w-full transition-all duration-500"></div>
+        <div class="w-14 h-14 border border-gold/20 flex items-center justify-center group-hover:bg-gold/10 transition-colors duration-300">
+          <i class="fas fa-envelope text-gold text-xl"></i>
+        </div>
+        <div>
+          <p class="font-body text-[10px] tracking-[0.4em] uppercase text-champagne/30 mb-1">Email</p>
+          <p class="font-headline text-xl text-champagne tracking-wider">Send a Mail</p>
+          <p class="font-body text-sm text-silk/40 mt-1">ROSEFASHION@gmail.com</p>
+        </div>
+      </a>
+
+      <!-- Location -->
+      <div class="group relative flex flex-col items-center text-center gap-5 p-8 bg-charcoal border border-white/5 hover:border-gold/30 hover:shadow-xl hover:shadow-gold/5 transition-all duration-500 hover:-translate-y-1">
+        <div class="absolute top-0 left-0 w-0 h-0.5 bg-gold group-hover:w-full transition-all duration-500"></div>
+        <div class="w-14 h-14 border border-gold/20 flex items-center justify-center group-hover:bg-gold/10 transition-colors duration-300">
+          <i class="fas fa-map-marker-alt text-gold text-xl"></i>
+        </div>
+        <div>
+          <p class="font-body text-[10px] tracking-[0.4em] uppercase text-champagne/30 mb-1">Location</p>
+          <p class="font-headline text-xl text-champagne tracking-wider">Find Us</p>
+          <p class="font-body text-sm text-silk/40 mt-1">Lagos, Nigeria</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="absolute bottom-0 left-0 gold-line"></div>
+</section>
+
+
+<!-- ========== FOOTER ========== -->
+<footer class="relative bg-obsidian pt-20 pb-8 overflow-hidden border-t border-gold/10">
+
+  <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_#D4AF3706_0%,_transparent_50%)]"></div>
+
+  <div class="max-w-7xl mx-auto px-6 md:px-16">
+
+    <!-- Footer Top -->
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-12 pb-16 border-b border-white/5">
+
+      <!-- Brand -->
+      <div class="md:col-span-2 flex flex-col gap-5">
+        <!-- Logo -->
+        <div>
+          <div class="flex items-center gap-3 mb-1">
+            <div class="w-8 h-8 border border-gold/30 flex items-center justify-center">
+              <span class="font-headline text-gold text-lg">B</span>
+            </div>
+            <span class="font-headline text-3xl text-gold tracking-[0.2em]">Rose</span>
+          </div>
+          <span class="font-body text-[9px] tracking-[0.5em] uppercase text-champagne/25 ml-11">AFRICA</span>
+        </div>
+
+        <p class="font-body text-sm text-silk/40 leading-relaxed max-w-sm tracking-wide">
+          Premium jewelry, bags, watches and shades for the bold African.
+          Quality you can feel. Style you can own. Lagos, Nigeria.
+        </p>
+
+        <!-- Social Icons -->
+        <div class="flex gap-3 mt-2">
+          <a href="https://instagram.com/Roseafrica" target="_blank"
+            class="w-10 h-10 border border-white/8 flex items-center justify-center text-champagne/30 hover:border-gold hover:text-gold transition-all duration-300">
+            <i class="fab fa-instagram text-sm"></i>
+          </a>
+          <a href="https://wa.me/9998105093592" target="_blank"
+            class="w-10 h-10 border border-white/8 flex items-center justify-center text-champagne/30 hover:border-[#25D366] hover:text-[#25D366] transition-all duration-300">
+            <i class="fab fa-whatsapp text-sm"></i>
+          </a>
+          <a href="https://facebook.com/Roseafrica" target="_blank"
+            class="w-10 h-10 border border-white/8 flex items-center justify-center text-champagne/30 hover:border-blue-400 hover:text-blue-400 transition-all duration-300">
+            <i class="fab fa-facebook text-sm"></i>
+          </a>
+          <a href="https://tiktok.com/@Roseafrica" target="_blank"
+            class="w-10 h-10 border border-white/8 flex items-center justify-center text-champagne/30 hover:border-white hover:text-white transition-all duration-300">
+            <i class="fab fa-tiktok text-sm"></i>
+          </a>
+          <a href="mailto:ROSEFASHION@gmail.com"
+            class="w-10 h-10 border border-white/8 flex items-center justify-center text-champagne/30 hover:border-gold hover:text-gold transition-all duration-300">
+            <i class="fas fa-envelope text-sm"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="flex flex-col gap-5">
+        <h4 class="font-body text-[10px] tracking-[0.4em] uppercase text-gold/60">Quick Links</h4>
+        <ul class="flex flex-col gap-3">
+          <li><a href="#home" class="font-body text-sm text-silk/40 hover:text-gold transition-colors duration-300 tracking-wide flex items-center gap-2"><i class="fas fa-chevron-right text-[8px] text-gold/30"></i>Home</a></li>
+          <li><a href="#categories" class="font-body text-sm text-silk/40 hover:text-gold transition-colors duration-300 tracking-wide flex items-center gap-2"><i class="fas fa-chevron-right text-[8px] text-gold/30"></i>Shop</a></li>
+          <li><a href="#products" class="font-body text-sm text-silk/40 hover:text-gold transition-colors duration-300 tracking-wide flex items-center gap-2"><i class="fas fa-chevron-right text-[8px] text-gold/30"></i>Products</a></li>
+          <li><a href="#order" class="font-body text-sm text-silk/40 hover:text-gold transition-colors duration-300 tracking-wide flex items-center gap-2"><i class="fas fa-chevron-right text-[8px] text-gold/30"></i>Order Now</a></li>
+          <li><a href="#about" class="font-body text-sm text-silk/40 hover:text-gold transition-colors duration-300 tracking-wide flex items-center gap-2"><i class="fas fa-chevron-right text-[8px] text-gold/30"></i>About Us</a></li>
+          <li><a href="#lookbook" class="font-body text-sm text-silk/40 hover:text-gold transition-colors duration-300 tracking-wide flex items-center gap-2"><i class="fas fa-chevron-right text-[8px] text-gold/30"></i>Lookbook</a></li>
+          <li><a href="#contact" class="font-body text-sm text-silk/40 hover:text-gold transition-colors duration-300 tracking-wide flex items-center gap-2"><i class="fas fa-chevron-right text-[8px] text-gold/30"></i>Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Categories & Contact -->
+      <div class="flex flex-col gap-5">
+        <h4 class="font-body text-[10px] tracking-[0.4em] uppercase text-gold/60">Categories</h4>
+        <ul class="flex flex-col gap-3">
+          <li><a href="#categories" class="font-body text-sm text-silk/40 hover:text-gold transition-colors duration-300 tracking-wide flex items-center gap-2"><i class="fas fa-gem text-[8px] text-gold/30"></i>Jewelry</a></li>
+          <li><a href="#categories" class="font-body text-sm text-silk/40 hover:text-gold transition-colors duration-300 tracking-wide flex items-center gap-2"><i class="fas fa-shopping-bag text-[8px] text-gold/30"></i>Bags</a></li>
+          <li><a href="#categories" class="font-body text-sm text-silk/40 hover:text-gold transition-colors duration-300 tracking-wide flex items-center gap-2"><i class="fas fa-clock text-[8px] text-gold/30"></i>Watches</a></li>
+          <li><a href="#categories" class="font-body text-sm text-silk/40 hover:text-gold transition-colors duration-300 tracking-wide flex items-center gap-2"><i class="fas fa-sun text-[8px] text-gold/30"></i>Shades</a></li>
+        </ul>
+
+        <h4 class="font-body text-[10px] tracking-[0.4em] uppercase text-gold/60 mt-2">Contact</h4>
+        <ul class="flex flex-col gap-2">
+          <li class="font-body text-sm text-silk/40 flex items-center gap-2">
+            <i class="fab fa-whatsapp text-[#25D366]/50 text-sm"></i>
+            0000005093592
+          </li>
+          <li class="font-body text-xs text-silk/30 flex items-center gap-2 break-all">
+            <i class="fas fa-envelope text-gold/30 text-xs"></i>
+            ROSEFASHION@gmail.com
+          </li>
+          <li class="font-body text-sm text-silk/40 flex items-center gap-2">
+            <i class="fas fa-map-marker-alt text-gold/30 text-xs"></i>
+            Lagos, Nigeria
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Newsletter -->
+    <div class="py-10 border-b border-white/5 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div>
+        <p class="font-headline text-2xl text-champagne tracking-wider">STAY IN THE LOOP</p>
+        <p class="font-body text-xs text-silk/30 tracking-wide mt-1">Get new arrivals & exclusive deals first.</p>
+      </div>
+      <div class="flex w-full md:w-auto">
+        <input type="email" placeholder="Your email address..."
+          class="font-body text-sm px-5 py-3 bg-charcoal border border-white/10 text-champagne placeholder-champagne/20 focus:outline-none focus:border-gold transition-colors duration-300 w-full md:w-72"/>
+        <button
+          class="font-body text-[10px] tracking-[0.2em] uppercase px-6 py-3 bg-gold text-obsidian hover:bg-amber transition-all duration-300 whitespace-nowrap">
+          Subscribe
+        </button>
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="font-body text-xs text-champagne/15 tracking-wide text-center md:text-left">
+        © 2025 Rose-fashion-accessories. All rights reserved. Lagos, Nigeria.
+      </p>
+      <div class="flex items-center gap-2">
+        <div class="w-1.5 h-1.5 rounded-full bg-gold animate-pulse"></div>
+        <p class="font-body text-xs text-champagne/15 tracking-wide">Taking orders — Nigeria wide delivery</p>
+      </div>
+      <div class="flex gap-6">
+        <a href="#" class="font-body text-xs text-champagne/15 hover:text-gold transition-colors duration-300 tracking-wide">Privacy Policy</a>
+        <a href="#" class="font-body text-xs text-champagne/15 hover:text-gold transition-colors duration-300 tracking-wide">Terms of Service</a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+
+<!-- ========== SCROLL TO TOP ========== -->
+<button id="scroll-top"
+  onclick="window.scrollTo({top:0, behavior:'smooth'})"
+  class="fixed bottom-8 right-8 z-50 w-12 h-12 bg-gold text-obsidian flex items-center justify-center shadow-lg shadow-gold/30 opacity-0 translate-y-4 transition-all duration-300 hover:bg-amber">
+  <i class="fas fa-arrow-up text-sm"></i>
+</button>
+
+<!-- ========== WHATSAPP FLOAT ========== -->
+<a href="https://wa.me/9998105093592" target="_blank"
+  class="fixed bottom-8 left-8 z-50 flex items-center gap-3 bg-[#25D366] text-white px-5 py-3 shadow-lg shadow-[#25D366]/30 hover:shadow-xl hover:scale-105 transition-all duration-300">
+  <i class="fab fa-whatsapp text-xl"></i>
+  <span class="font-body text-xs tracking-widest uppercase">Order Now</span>
+</a>
+</main>
+
+
+<!-- ========== SCRIPTS ========== -->
+<script>
+
+
+// ---- LOOKBOOK FILTER ----
+function filterLook(category) {
+  const items = document.querySelectorAll('.look-item');
+  const btns  = document.querySelectorAll('.lfilter-btn');
+
+  btns.forEach(btn => {
+    if (btn.dataset.lf === category) {
+      btn.classList.add('bg-gold', 'text-obsidian', 'border-gold');
+      btn.classList.remove('text-champagne/40', 'border-champagne/10');
+    } else {
+      btn.classList.remove('bg-gold', 'text-obsidian', 'border-gold');
+      btn.classList.add('text-champagne/40', 'border-champagne/10');
+    }
+  });
+
+  items.forEach(item => {
+    if (category === 'all' || item.dataset.lcat === category) {
+      item.style.display = 'block';
+      item.style.animation = 'fadeUp 0.4s ease forwards';
+    } else {
+      item.style.display = 'none';
+    }
+  });
+}
+
+// ---- LOOKBOOK LIGHTBOX ----
+function openLook(el) {
+  const img     = el.querySelector('img');
+  const caption = el.querySelector('.font-headline');
+  document.getElementById('look-lightbox-img').src         = img.src;
+  document.getElementById('look-lightbox-caption').textContent = caption ? caption.textContent : '';
+  document.getElementById('look-lightbox').classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLook(e) {
+  if (!e || e.target === document.getElementById('look-lightbox') || e.target.closest('button')) {
+    document.getElementById('look-lightbox').classList.add('hidden');
+    document.body.style.overflow = '';
+  }
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    closeLook();
+    closeModal();
+  }
+});
+
+// ---- TESTIMONIAL SLIDER ----
+let tCurrent = 0;
+const tTotal = 3;
+
+function tUpdateSlider() {
+  document.getElementById('tslides-wrapper').style.transform =
+    `translateX(-${tCurrent * 100}%)`;
+
+  document.querySelectorAll('.tdot').forEach((dot, i) => {
+    if (i === tCurrent) {
+      dot.classList.add('bg-gold', 'w-8');
+      dot.classList.remove('bg-white/15', 'w-4');
+    } else {
+      dot.classList.remove('bg-gold', 'w-8');
+      dot.classList.add('bg-white/15', 'w-4');
+    }
+  });
+}
+
+function tNextSlide() {
+  tCurrent = (tCurrent + 1) % tTotal;
+  tUpdateSlider();
+}
+
+function tPrevSlide() {
+  tCurrent = (tCurrent - 1 + tTotal) % tTotal;
+  tUpdateSlider();
+}
+
+function tGoTo(index) {
+  tCurrent = index;
+  tUpdateSlider();
+}
+
+// Auto slide every 6 seconds
+setInterval(tNextSlide, 6000);
+
+// ---- BUDGET SELECTOR ----
+function selectBudget(btn) {
+  document.querySelectorAll('.budget-btn').forEach(b => {
+    b.classList.remove('bg-gold', 'text-obsidian', 'border-gold');
+    b.classList.add('text-champagne/40', 'border-white/10');
+  });
+  btn.classList.add('bg-gold', 'text-obsidian', 'border-gold');
+  btn.classList.remove('text-champagne/40', 'border-white/10');
+  document.getElementById('o-budget').value = btn.dataset.budget;
+}
+
+// ---- PAYMENT SELECTOR ----
+function selectPayment(btn) {
+  document.querySelectorAll('.pay-btn').forEach(b => {
+    b.classList.remove('bg-gold', 'text-obsidian', 'border-gold');
+    b.classList.add('text-champagne/40', 'border-white/10');
+  });
+  btn.classList.add('bg-gold', 'text-obsidian', 'border-gold');
+  btn.classList.remove('text-champagne/40', 'border-white/10');
+  document.getElementById('o-payment').value = btn.dataset.pay;
+}
+
+// ---- ORDER FORM SUBMIT ----
+function submitOrder(e) {
+  e.preventDefault();
+  const btn = document.getElementById('order-btn-text');
+  btn.textContent = 'Sending...';
+
+  const name     = document.getElementById('o-name').value;
+  const phone    = document.getElementById('o-phone').value;
+  const email    = document.getElementById('o-email').value;
+  const category = document.getElementById('o-category').value;
+  const item     = document.getElementById('o-item').value;
+  const gender   = document.getElementById('o-gender').value;
+  const qty      = document.getElementById('o-qty').value;
+  const budget   = document.getElementById('o-budget').value;
+  const address  = document.getElementById('o-address').value;
+  const payment  = document.getElementById('o-payment').value;
+  const notes    = document.getElementById('o-notes').value;
+
+  const message =
+`Hello Rose-fashion-accessories! 👑
+
+*NEW ORDER RECEIVED*
+
+🛍️ *Category:* ${category}
+📦 *Item:* ${item}
+⚥ *For:* ${gender}
+🔢 *Quantity:* ${qty}
+💰 *Budget:* ${budget || 'Not specified'}
+💳 *Payment:* ${payment || 'Not specified'}
+
+👤 *Name:* ${name}
+📞 *Phone:* ${phone}
+📧 *Email:* ${email || 'Not provided'}
+📍 *Address:* ${address}
+
+📝 *Notes:* ${notes || 'None'}
+
+_Ordered from RoseAfrica.com_ ✨`;
+
+  setTimeout(() => {
+    const encoded = encodeURIComponent(message);
+    window.open(`https://wa.me/9990081050093592?text=${encoded}`, '_blank');
+
+    // Show success
+    document.getElementById('order-form').classList.add('hidden');
+    const success = document.getElementById('order-success');
+    success.classList.remove('hidden');
+    success.classList.add('flex');
+    btn.textContent = 'Send Order via WhatsApp';
+  }, 1200);
+}
+
+// ---- RESET ORDER FORM ----
+function resetOrder() {
+  document.getElementById('order-form').reset();
+  document.getElementById('o-budget').value  = '';
+  document.getElementById('o-payment').value = '';
+
+  document.querySelectorAll('.budget-btn, .pay-btn').forEach(b => {
+    b.classList.remove('bg-gold', 'text-obsidian', 'border-gold');
+    b.classList.add('text-champagne/40', 'border-white/10');
+  });
+
+  document.getElementById('order-form').classList.remove('hidden');
+  const success = document.getElementById('order-success');
+  success.classList.add('hidden');
+  success.classList.remove('flex');
+}
+
+// ---- PRODUCT FILTER ----
+let activeCategory = 'all';
+let activeGender   = 'all';
+
+function filterProducts(category) {
+  activeCategory = category;
+  applyFilters();
+
+  // Update filter buttons
+  document.querySelectorAll('.prod-filter').forEach(btn => {
+    if (btn.dataset.filter === category) {
+      btn.classList.add('bg-gold', 'text-obsidian', 'border-gold');
+      btn.classList.remove('text-champagne/40', 'border-champagne/10');
+    } else {
+      btn.classList.remove('bg-gold', 'text-obsidian', 'border-gold');
+      btn.classList.add('text-champagne/40', 'border-champagne/10');
+    }
+  });
+}
+
+function filterGender(gender) {
+  activeGender = gender;
+  applyFilters();
+
+  document.querySelectorAll('.gend-filter').forEach(btn => {
+    if (btn.dataset.gf === gender) {
+      btn.classList.add('bg-champagne/10', 'text-gold', 'border-gold');
+      btn.classList.remove('text-champagne/40', 'border-champagne/10');
+    } else {
+      btn.classList.remove('bg-champagne/10', 'text-gold', 'border-gold');
+      btn.classList.add('text-champagne/40', 'border-champagne/10');
+    }
+  });
+}
+
+function applyFilters() {
+  document.querySelectorAll('.prod-card').forEach(card => {
+    const catMatch    = activeCategory === 'all' || card.dataset.cat    === activeCategory;
+    const genderMatch = activeGender   === 'all' || card.dataset.gender === activeGender;
+    if (catMatch && genderMatch) {
+      card.style.display = 'block';
+      card.style.animation = 'fadeUp 0.4s ease forwards';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+
+// ---- QUICK ORDER MODAL ----
+let currentProduct = '';
+let currentPrice   = '';
+
+function quickOrder(name, price) {
+  currentProduct = name;
+  currentPrice   = price;
+  document.getElementById('modal-product-name').textContent  = name;
+  document.getElementById('modal-product-price').textContent = price;
+  document.getElementById('quick-modal').classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  document.getElementById('quick-modal').classList.add('hidden');
+  document.body.style.overflow = '';
+}
+
+function submitQuickOrder(e) {
+  e.preventDefault();
+  const btn     = document.getElementById('qo-btn-text');
+  btn.textContent = 'Processing...';
+
+  const name    = document.getElementById('qo-name').value;
+  const phone   = document.getElementById('qo-phone').value;
+  const address = document.getElementById('qo-address').value;
+  const qty     = document.getElementById('qo-qty').value;
+
+  const message =
+`Hello Rose-fashion-accessories! 👑
+
+*NEW ORDER*
+
+🛍️ *Product:* ${currentProduct}
+💰 *Price:* ${currentPrice}
+🔢 *Quantity:* ${qty}
+
+👤 *Name:* ${name}
+📞 *Phone:* ${phone}
+📍 *Address:* ${address}
+
+_Ordered from RoseAfrica.com_`;
+
+  setTimeout(() => {
+    const encoded = encodeURIComponent(message);
+    window.open(`https://wa.me/9998105093592?text=${encoded}`, '_blank');
+    closeModal();
+    btn.textContent = 'Confirm Order via WhatsApp';
+    e.target.reset();
+  }, 1000);
+}
+
+// Close modal on backdrop click
+document.getElementById('quick-modal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+
+// Close on Escape
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeModal();
+});
+
+    // ---- SCROLL TO PRODUCTS BY CATEGORY ----
+function scrollToProducts(category) {
+  // Set active filter then scroll
+  const target = document.getElementById('products');
+  if (target) {
+    target.scrollIntoView({ behavior: 'smooth' });
+    setTimeout(() => filterProducts(category), 600);
+  }
+}
+
+
+// ---- GENDER TOGGLE ----
+const heroImages = {
+  women: {
+    main:   'https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?w=600&q=80',
+    top:    'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=300&q=80',
+    bottom: 'https://images.unsplash.com/photo-1523170335258-f5ed11844a49?w=300&q=80',
+  },
+  men: {
+    main:   'https://images.unsplash.com/photo-1622434641406-a158199950f2?w=600&q=80',
+    top:    'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=300&q=80',
+    bottom: 'https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?w=300&q=80',
+  }
+};
+
+function setGender(gender) {
+  // Swap images
+  const imgs = heroImages[gender];
+  document.getElementById('hero-img-main').src   = imgs.main;
+  document.getElementById('hero-img-top').src    = imgs.top;
+  document.getElementById('hero-img-bottom').src = imgs.bottom;
+
+  // Update pills
+  const pills = document.querySelectorAll('.gender-pill');
+  pills.forEach(p => {
+    p.classList.remove('bg-gold', 'text-obsidian');
+    p.classList.add('border', 'border-champagne/20', 'text-champagne/50');
+  });
+
+  const active = document.getElementById(`pill-${gender}`);
+  active.classList.add('bg-gold', 'text-obsidian');
+  active.classList.remove('border', 'border-champagne/20', 'text-champagne/50');
+}
+  // ---- LOADER ----
+  const loaderTexts = ['Loading...', 'Curating...', 'Almost There...', 'Welcome 👑'];
+  let loaderProgress = 0;
+  let loaderTextIdx = 0;
+
+  const loaderInterval = setInterval(() => {
+    loaderProgress += Math.floor(Math.random() * 20 + 10);
+    if (loaderProgress > 100) loaderProgress = 100;
+
+    document.getElementById('loader-bar').style.width = loaderProgress + '%';
+
+    if (loaderTextIdx < loaderTexts.length - 1) {
+      loaderTextIdx++;
+      document.getElementById('loader-text').textContent = loaderTexts[loaderTextIdx];
+    }
+
+    if (loaderProgress >= 100) {
+      clearInterval(loaderInterval);
+      setTimeout(() => {
+        const loader = document.getElementById('loader');
+        loader.style.opacity = '0';
+        loader.style.transform = 'scale(1.04)';
+        setTimeout(() => loader.style.display = 'none', 900);
+      }, 400);
+    }
+  }, 350);
+
+  // ---- NAVBAR SCROLL ----
+  window.addEventListener('scroll', () => {
+    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
+
+    // Scroll to top button
+    const btn = document.getElementById('scroll-top');
+    if (btn) {
+      if (window.scrollY > 400) {
+        btn.classList.remove('opacity-0', 'translate-y-4');
+        btn.classList.add('opacity-100', 'translate-y-0');
+      } else {
+        btn.classList.add('opacity-0', 'translate-y-4');
+        btn.classList.remove('opacity-100', 'translate-y-0');
+      }
+    }
+  });
+
+  // ---- MOBILE MENU ----
+  const menuBtn  = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuIcon = document.getElementById('menu-icon');
+
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('open');
+    menuIcon.className = mobileMenu.classList.contains('open')
+      ? 'fas fa-times' : 'fas fa-bars';
+  });
+
+  function closeMenu() {
+    mobileMenu.classList.remove('open');
+    menuIcon.className = 'fas fa-bars';
+  }
+
+</script>
+
+</body>
+</html>
